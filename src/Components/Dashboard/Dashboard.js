@@ -1,12 +1,11 @@
 import React, {Component} from 'react'
 import StampList from '../StampList/StampList'
-import {Link} from 'react-router-dom'
+import BucketList from'../BucketList/BucketList'
+import {Route, Link} from 'react-router-dom'
 
 
 export default class Dashboard extends Component{
     render(){
-        console.log(this.props.Stamp)
-        console.log(this.props.BucketList)
         return(
             <>
                 <header>
@@ -19,8 +18,8 @@ export default class Dashboard extends Component{
                         </div>
                     </section>
                     <main>
-                        <h2>You have {this.props.Stamp.length} National Park Stamps</h2><br/>
-                        <h2>You have xxx National Parks on your Bucket List</h2>
+                        <h2>You have {this.props.Stamp_Dummy.length} National Park Stamps</h2><br/>
+                        <h2>You have {this.props.Bucket_Dummy.length} National Parks on your Bucket List</h2>
                         <Link to={'/StampList'}>
                             View Your Stamps
                         </Link>

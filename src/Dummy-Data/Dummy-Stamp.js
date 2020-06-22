@@ -4,27 +4,32 @@ export default{
     {
         id: 1,
         fullname: "Yellowstone National Park",
-        stamped: true
+        Date: '01-01-1970',
+        comment: "This is the first comment"
     },
     {
         id: 2,
         fullname: "Arcadia National Park",
-        stamped: true
+        Date: '01-01-1970',
+        comment: "This is the second comment"
     },
     {
         id: 3,
         fullname: "Yosemite National Park",
-        stamped: true
+        Date: '01-01-1970',
+        comment: "This is the third comment"
     },
     {
         id: 4,
         fullname: "Zion National Park",
-        stamped: true
+        Date: '01-01-1970',
+        comment: "This is the fourth comment"
     },
     {
         id: 5,
         fullname: "Smokies National Parks",
-        stamped: true
+        Date: '01-01-1970',
+        comment: "This is the fifth comment"
     }
 ]
 } 

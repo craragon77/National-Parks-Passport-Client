@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom'
 
 export default class Bucketlist extends Component {
     render(){
@@ -11,10 +12,16 @@ export default class Bucketlist extends Component {
                     <h1>Your BucketList</h1>
                     <main>
                         <ul>
-                            <li>List 1</li>
-                            <li>List 2</li>
-                            <li>List 3</li>
+                            {this.props.Bucket.map((bucket) => {
+                                return(
+                                    <li>
+                                    {bucket.parkName}
+                                    </li>
+                                )
+                                
+                            })}
                         </ul>
+                        <Link to={'/Dashboard'}>Back to dashboard</Link>
                     </main>
                 </body>
                 <footer>

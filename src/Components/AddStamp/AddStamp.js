@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 export default class AddStamp extends Component{
     render() {
@@ -19,6 +20,7 @@ export default class AddStamp extends Component{
                             <input type="text" name="Comments" /><br/>
                         </form>
                     </main>
+                    <Link to={'/StampList'}>Back to your Stamps</Link>
                 </body>
                 <footer>
                     <p>Chris Aragon Footer 2020</p>

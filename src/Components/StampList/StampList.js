@@ -14,7 +14,7 @@ export default class StampList extends Component {
                     <h1>Your Stamps!</h1>
                     <main>
                         <ul>
-                        {this.props.Stamp.map((stamp) => {
+                        {this.props.Stamp_Dummy.map((stamp) => {
                             return(
                             <li key={stamp.id}>
                                 <Link to={`/Stamp/${stamp.id}`}>
@@ -25,6 +25,7 @@ export default class StampList extends Component {
                     }
                         </ul>
                     </main>
+                    <Link to='/Dashboard'>Return to Dashboard</Link>
                 </body>
                 <footer>
                     <p>Chris Aragon Footer baby!</p>
