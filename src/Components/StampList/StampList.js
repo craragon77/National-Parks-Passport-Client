@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
 export default class StampList extends Component {
+    
     render() {
+        console.log(this.props.Stamp)
         return(
             <>
                 <header>
@@ -16,7 +18,7 @@ export default class StampList extends Component {
                             return(
                             <li key={stamp.id}>
                                 <Link to={`/Stamp/${stamp.id}`}>
-                                    {stamp.fullName}
+                                    {stamp.fullname}
                                 </Link>
                             </li>)
                         })
