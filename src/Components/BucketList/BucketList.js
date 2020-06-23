@@ -7,7 +7,7 @@ export default class Bucketlist extends Component {
         return(
             <>
                 <body>
-                    <h1 className="Bucketlist-Title">Your BucketList</h1>
+                    <h1 className="Bucketlist-Title">Your Bucket List</h1>
                     <main>
                         <ul>
                             {this.props.Bucket.map((bucket) => {

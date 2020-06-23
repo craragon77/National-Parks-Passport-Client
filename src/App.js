@@ -21,11 +21,17 @@ function App() {
   return (
     <>
     <header className="app-header">
+    <section className="title-section">
+      <h1>National Parks Discover-E-Pass</h1>
+      <h3>A Paperless Passport to America's National Parks and Monuments</h3>
+    </section><br/>
       <ul>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/dashboard'>Dashboard</Link></li>
         <li><Link to='/StampList'>Stamps List</Link></li>
         <li><Link to='/BucketList'>BucketList</Link></li>
+        <li id="login-nav"><Link to={'/Login'}>Login</Link></li>
+        <li id="signup-nav"><Link to={'/Signup'}>Signup</Link></li>
       </ul>
     </header>
     <body>

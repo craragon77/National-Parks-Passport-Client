@@ -17,8 +17,12 @@ ul{
     padding: 20px;
 }
 a{
-    color: green;
+    color: yellow;
 }
 ul, footer{
     border: 2px solid white;
+}
+#signup-nav, #login-nav{
+    display: inline;
+    flex-direction: column-reverse;
 }

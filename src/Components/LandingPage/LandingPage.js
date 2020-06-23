@@ -8,10 +8,6 @@ export default class LandingPage extends Component {
             <>
                 <body>
                     <main>
-                        <section className="title-section">
-                            <h1>National Parks Discover-E-Pass</h1>
-                            <h3>A Paperless Passport to America's National Parks and Monuments</h3>
-                        </section><br/>
                         <section className="info-section">
                             <h2>The National Parks Passport</h2>
                             <p>
@@ -26,13 +22,13 @@ export default class LandingPage extends Component {
                         <section className="how-to-section">
                             <h2>How Does This Work?</h2>
                             <p>
-                                Snazzy Program Name is an app to serve as a paperless Passport to our National Parks. This free-of-charge program invites outdoorspeople, 
+                                Discover-E-Pass is an app to serve as a paperless Passport to our National Parks. This free-of-charge program invites outdoorspeople, 
                                 history lovers, and national park enthusiests to log every national park they have attended or wish to visit, as well as to 
                                 serve as a guide to the wonders that our National Parks have to offer!
                             </p>
                         </section><br />
                         <section className="signup-section">
-                            <h2>Make an account and get stampin!</h2>
+                            <h2>Make an account and get stampin'!</h2>
                             <Link to={'/Signup'}>Make an account!</Link><br/>
                             <Link to={'/Login'}>Login to my account!</Link>
                         </section><br/>

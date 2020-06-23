@@ -20,10 +20,12 @@ export default class Dashboard extends Component{
                         <Link to={'/StampList'}>
                             View Your Stamps
                         </Link><br/>
+                        <Link to={'/AddStamp'}>Add a new Stamp</Link><br/>
                         <h2>You have {this.props.Bucket_Dummy.length} National Parks on your Bucket List</h2>
                         <Link to={'/Bucketlist'}>
                             View Your BucketList
-                        </Link>
+                        </Link><br/>
+                        <Link to={'/AddBucketList'}>Add to your Bucket List</Link><br/>
                     </main>
                 </body>
             </>
