@@ -4,23 +4,17 @@ import {Link} from 'react-router-dom'
 export default class Stamp extends Component {
     render(){
         console.log(this.props.Stamp_Dummy)
-        //console.log(this.props.match.params.id)
-        const testing = this.props.Stamp_Dummy.find(s => {
-            return(
-                s.id === this.props.match.params.id
-            )
-            
-        })
+        console.log(this.props.match.params.id)
         return(
             <>
                 <header>
                     Nav Bar
                 </header>
                 <body>
-                    <h1>{testing.fullname}</h1><br/>
-                    <h3>Date Stamped: {testing.Date}</h3><br/>
+                    <h1>{this.props.Stamp_Dummy[this.props.match.params.id].fullname}</h1><br/>
+                    <h3>Date Stamped: {this.props.Stamp_Dummy[this.props.match.params.id].Date}</h3><br/>
                     <label for="comments">comments</label><br/>
-                    <p>{testing.comment}</p>
+                    <p>{this.props.Stamp_Dummy[this.props.match.params.id].comment}</p>
                 </body>
                 <Link to='/StampList'>Return to Your Stamps</Link>
                 <footer>

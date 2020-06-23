@@ -26,7 +26,8 @@ export default class StampList extends Component {
                     }
                         </ul>
                     </main>
-                    <Link to='/Dashboard'>Return to Dashboard</Link>
+                    <Link to='/Dashboard'>Return to Dashboard</Link><br/>
+                    <Link to='/addStamp'>Add a new stamp</Link><br/>
                 </body>
                 <footer>
                     <p>Chris Aragon Footer baby!</p>
