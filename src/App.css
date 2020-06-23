@@ -1,0 +1,24 @@
+body{
+    background-color: navy;
+    color: white;
+    margin-top: 0px;
+}
+
+body, .app-header, .app-footer{
+    padding: 20px;
+}
+
+.app-header > ul > li{
+    padding: 10px;
+    list-style: none;
+    display: inline;
+}
+ul{
+    padding: 20px;
+}
+a{
+    color: green;
+}
+ul, footer{
+    border: 2px solid white;
+}

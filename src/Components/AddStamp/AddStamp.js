@@ -1,17 +1,15 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import './AddStamp.css'
 
 export default class AddStamp extends Component{
     render() {
         return (
             <>
-                <header>
-                    Nav Bar
-                </header>
                 <body>
-                    <h1>Stamp a new park</h1>
+                    <h1 className='AddStamp-Title'>Stamp a new park</h1>
                     <main>
-                        <form>
+                        <form className='AddStamp-Form'>
                             <label htmlFor="name">Park Name</label><br/>
                             <input type="text" name="Park-Name" /><br/>
                             <label htmlFor="date">Date of Attendence</label><br/>
@@ -20,11 +18,8 @@ export default class AddStamp extends Component{
                             <input type="text" name="Comments" /><br/>
                         </form>
                     </main>
-                    <Link to={'/StampList'}>Back to your Stamps</Link>
+                    <Link to={'/StampList'}>Stamp This Park</Link>
                 </body>
-                <footer>
-                    <p>Chris Aragon Footer 2020</p>
-                </footer>
             </>
         )
     }

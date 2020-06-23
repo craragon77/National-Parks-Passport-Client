@@ -11,6 +11,7 @@ import Stamp from './Components/Stamp/Stamp';
 import Login from './Components/Login/Login';
 import STAMP from './Dummy-Data/Dummy-Stamp';
 import BUCKET from './Dummy-Data/Dummy-Bucketlist';
+import './App.css';
 
 function App() {
   console.log(STAMP)
@@ -19,33 +20,41 @@ function App() {
   const Bucket = BUCKET.BUCKET
   return (
     <>
-    <header>
-      <Link to='/'>Home</Link>
-      <Link to='/dashboard'>Dashboard</Link>
-      <Link to='/StampList'>Stamps List</Link>
-      <Link to='/BucketList'>BucketList</Link>
+    <header className="app-header">
+      <ul>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/dashboard'>Dashboard</Link></li>
+        <li><Link to='/StampList'>Stamps List</Link></li>
+        <li><Link to='/BucketList'>BucketList</Link></li>
+      </ul>
     </header>
-      <Switch>
-        <Route exact path='/' component={LandingPage}/>
-        <Route path='/Signup' component={Signup} />
-        <Route path='/Login' component={Login} />
-        <Route path='/Dashboard' render={(prop) => (
-          <Dashboard {...prop} name={'Chris'} Stamp_Dummy={Stamp_Dummy} Bucket_Dummy={Bucket}/>
-        )} />
-        <Route path='/StampList' render={(prop) => (
-            <StampList {...prop} Stamp_Dummy={Stamp_Dummy} />
-        )} />
-        <Route path='/BucketList' render={(prop) => (
-            <BucketList {...prop} Bucket={Bucket} />
-        )} />
-        <Route path='/AddStamp' component={AddStamp}/>
-        <Route path='/AddBucketList' component={AddBucketList}/>
-        <Route path='/Stamp/:id' render={(prop) => (
-          <Stamp {...prop} Stamp_Dummy={Stamp_Dummy} />
-        )} />
-        
-        
-      </Switch>
+    <body>
+        <main>
+          <Switch>
+            <Route exact path='/' component={LandingPage}/>
+            <Route path='/Signup' component={Signup} />
+            <Route path='/Login' component={Login} />
+            <Route path='/Dashboard' render={(prop) => (
+              <Dashboard {...prop} name={'Chris'} Stamp_Dummy={Stamp_Dummy} Bucket_Dummy={Bucket}/>
+            )} />
+            <Route path='/StampList' render={(prop) => (
+                <StampList {...prop} Stamp_Dummy={Stamp_Dummy} />
+            )} />
+            <Route path='/BucketList' render={(prop) => (
+                <BucketList {...prop} Bucket={Bucket} />
+            )} />
+            <Route path='/AddStamp' component={AddStamp}/>
+            <Route path='/AddBucketList' component={AddBucketList}/>
+            <Route path='/Stamp/:id' render={(prop) => (
+              <Stamp {...prop} Stamp_Dummy={Stamp_Dummy} />
+            )} />
+          </Switch>
+      </main>
+    </body>
+    <footer className="app-footer">
+      <p>Created by Chris Aragon 2020</p>
+    </footer>
+
     </>
   )
 }

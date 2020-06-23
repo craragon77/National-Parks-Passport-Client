@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import Stamp from '../Stamp/Stamp';
+import './StampList.css'
 
 export default class StampList extends Component {
     
@@ -8,11 +9,8 @@ export default class StampList extends Component {
         console.log(this.props.Stamp)
         return(
             <>
-                <header>
-                    Nav Bar
-                </header>
                 <body>
-                    <h1>Your Stamps!</h1>
+                    <h1 className='Your-Stamps-Title'>Your Stamps!</h1>
                     <main>
                         <ul>
                         {this.props.Stamp_Dummy.map((stamp) => {
@@ -29,9 +27,6 @@ export default class StampList extends Component {
                     <Link to='/Dashboard'>Return to Dashboard</Link><br/>
                     <Link to='/addStamp'>Add a new stamp</Link><br/>
                 </body>
-                <footer>
-                    <p>Chris Aragon Footer baby!</p>
-                </footer>
             </>
         )
     }

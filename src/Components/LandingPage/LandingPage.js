@@ -1,20 +1,16 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import './LandingPage.css';
 
 export default class LandingPage extends Component {
     render(){
         return (
             <>
-                <header>
-                    <div className="navbar">
-                        Nav Bar
-                    </div>
-                </header>
                 <body>
                     <main>
                         <section className="title-section">
-                            <h1>[Catchy National Parks Passport Here]</h1>
-                            <h3>A Paperless Passport to America's Historic and National Wonders</h3>
+                            <h1>National Parks Discover-E-Pass</h1>
+                            <h3>A Paperless Passport to America's National Parks and Monuments</h3>
                         </section><br/>
                         <section className="info-section">
                             <h2>The National Parks Passport</h2>
@@ -37,14 +33,11 @@ export default class LandingPage extends Component {
                         </section><br />
                         <section className="signup-section">
                             <h2>Make an account and get stampin!</h2>
-                            <Link to={'/Signup'}>Make an account!</Link>
+                            <Link to={'/Signup'}>Make an account!</Link><br/>
                             <Link to={'/Login'}>Login to my account!</Link>
                         </section><br/>
                     </main>
                 </body>
-                <footer class="footer">
-                    Created by Chris Aragon 2020
-                </footer>
             </>
         )
     }

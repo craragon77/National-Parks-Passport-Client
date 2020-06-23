@@ -1,15 +1,13 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import './BucketList.css';
 
 export default class Bucketlist extends Component {
     render(){
         return(
             <>
-                <header>
-                    Nav Bar
-                </header>
                 <body>
-                    <h1>Your BucketList</h1>
+                    <h1 className="Bucketlist-Title">Your BucketList</h1>
                     <main>
                         <ul>
                             {this.props.Bucket.map((bucket) => {
@@ -21,12 +19,10 @@ export default class Bucketlist extends Component {
                                 
                             })}
                         </ul>
+                        <Link to={'/AddBucketList'}>Add to your bucket list</Link><br/>
                         <Link to={'/Dashboard'}>Back to dashboard</Link>
                     </main>
                 </body>
-                <footer>
-                    <p>Chris Aragon Footer baby!</p>
-                </footer>
             </>
         )
     }
