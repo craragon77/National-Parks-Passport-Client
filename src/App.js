@@ -4,7 +4,7 @@ import Signup from './Components/Signup/Signup';
 import Dashboard from './Components/Dashboard/Dashboard';
 import AddStamp from './Components/AddStamp/AddStamp';
 import AddBucketList from './Components/AddBucketList/AddBucketList';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Link} from 'react-router-dom';
 import StampList from './Components/StampList/StampList';
 import BucketList from './Components/BucketList/BucketList';
 import Stamp from './Components/Stamp/Stamp';
@@ -19,6 +19,12 @@ function App() {
   const Bucket = BUCKET.BUCKET
   return (
     <>
+    <header>
+      <Link to='/'>Home</Link>
+      <Link to='/dashboard'>Dashboard</Link>
+      <Link to='/StampList'>Stamps List</Link>
+      <Link to='/BucketList'>BucketList</Link>
+    </header>
       <Switch>
         <Route exact path='/' component={LandingPage}/>
         <Route path='/Signup' component={Signup} />

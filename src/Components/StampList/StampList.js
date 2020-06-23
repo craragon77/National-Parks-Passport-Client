@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import Stamp from '../Stamp/Stamp';
 
 export default class StampList extends Component {
     
