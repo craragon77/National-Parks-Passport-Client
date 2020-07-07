@@ -11,7 +11,6 @@ import Stamp from './Components/Stamp/Stamp';
 import Login from './Components/Login/Login';
 import STAMP from './Dummy-Data/Dummy-Stamp';
 import BUCKET from './Dummy-Data/Dummy-Bucketlist';
-import Data from './Components/Data/Data';
 import './App.css';
 
 function App() {
@@ -58,7 +57,6 @@ function App() {
           </Switch>
       </main>
     </body>
-    <Link to={'/Data'} component={Data}/>
     <footer className="app-footer">
       <p>Created by Chris Aragon 2020</p>
     </footer>
