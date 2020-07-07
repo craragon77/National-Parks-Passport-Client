@@ -12,19 +12,19 @@ export default class Signup extends Component {
         }
     }
 
-    handleUsername = (e) => {
+    handleUsername = (event) => {
         this.setState({
-            username: e.target[username].value
+            username: event.target['username'].value
         })
     }
-    handlePassword = (e) => {
+    handlePassword = (event) => {
         this.setState({
-            password: e.target[password].value
+            password: event.target['password'].value
         })
     }
-    handleRepeatPassword = (e) => {
+    handleRepeatPassword = (event) => {
         this.setState({
-            password2: e.target[password2].value
+            password2: event.target['password2'].value
         })
     }
     handleRegistration = (e) => {
