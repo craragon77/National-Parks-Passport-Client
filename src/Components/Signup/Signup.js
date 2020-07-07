@@ -48,9 +48,9 @@ export default class Signup extends Component {
                 'Content-Type': 'Application/JSON'
             },
             body: {
-                "username": `"${this.state.username}"`,
-                "password": `"${this.state.password}"`,
-                "nickname": `"${this.state.nickname}"`
+                username: this.state.username,
+                password: this.state.password,
+                nickname: this.state.nickname
             } 
             })
                 .then(res => {
