@@ -8,10 +8,10 @@ export default class Stamp extends Component {
         return(
             <>
                 <body>
-                    <h1>{this.props.Stamp_Dummy[this.props.match.params.id].fullname}</h1><br/>
-                    <h3>Date Stamped: {this.props.Stamp_Dummy[this.props.match.params.id].Date}</h3><br/>
+                    <h1>{this.props.Stamp_Dummy[this.props.match.params.id-1].fullname}</h1><br/>
+                    <h3>Date Stamped: {this.props.Stamp_Dummy[this.props.match.params.id-1].Date}</h3><br/>
                     <label for="comments">comments</label><br/>
-                    <p>{this.props.Stamp_Dummy[this.props.match.params.id].comment}</p>
+                    <p>{this.props.Stamp_Dummy[this.props.match.params.id-1].comment}</p>
                 </body>
                 <Link to='/StampList'>Return to Stamp List</Link>
             </>
