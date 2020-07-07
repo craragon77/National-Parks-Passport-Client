@@ -26,19 +26,15 @@ export default class Login extends Component {
     fetchLogin = (e) => {
         e.preventDefault()
         console.log('yeet this activated')
-        fetch("https://tranquil-wildwood-36569.herokuapp.com/api/users", {
-            method: 'GET',
-            headers: {
-                'content-type': 'application/json'
-            }
-        })
+        let username = this.state.username
+        let password = this.state.password
+        fetch("https://tranquil-wildwood-36569.herokuapp.com/api/users/")
         .then(res => {
             if (res.ok){
                 console.log(res)
-                
             }
         })
-        .then(responseJson => console.log(responseJson))
+        .then(responseJson => responseJson.filter())
         .catch((error) => {
             console.log('something went wrong')
         })
