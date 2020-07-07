@@ -14,7 +14,7 @@ export default class Signup extends Component {
 
     handleUsername = (e) => {
         this.setState({
-            username: this.state.e.target[username].value
+            username: e.target[username].value
         })
     }
     handlePassword = (e) => {
