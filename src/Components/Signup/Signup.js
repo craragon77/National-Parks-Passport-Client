@@ -56,11 +56,13 @@ export default class Signup extends Component {
             })
                 .then(res => {
                     console.log(res)
-                    if (res = 201){
-                        res.json()
+                    if (res.status == 201){
+                        return res.json()
+                    } else{
+                        return console.log('the else has activated')
                     }
                 })
-                .then(res => console.log(res))
+                .then(resJson => console.log(resJson))
                 .catch(error => 'There was an error!')
             }
         }
