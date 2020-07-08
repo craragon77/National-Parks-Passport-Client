@@ -48,15 +48,15 @@ export default class Signup extends Component {
             headers: {
                'Content-Type': 'Application/JSON'
             },
-            body: {
+            body: JSON.stringify({
                 'username': this.state.username,
                 'password': this.state.password,
                 'nickname': this.state.nickname
-            }
+            })
             })
                 .then(res => {
                     console.log(res)
-                    if (res.ok){
+                    if (res = 201){
                         res.json()
                     }
                 })
