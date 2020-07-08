@@ -6,6 +6,16 @@ import './Dashboard.css'
 
 
 export default class Dashboard extends Component{
+    componentDidMount(){
+        fetch('http://localhost:8000/api/parks/')
+        .then( res => {
+            if (res.ok){
+                res.json()
+            }
+        })
+        .then(res => console.log(res))
+        .catch(error => 'something went wrong, whoops')
+    }
     render(){
         return(
             <>

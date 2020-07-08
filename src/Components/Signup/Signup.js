@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './Signup.css'
 
+
 export default class Signup extends Component {
     constructor(props){
         super(props)
@@ -42,18 +43,19 @@ export default class Signup extends Component {
         if (this.state.password !== this.state.password2){
             return alert('your two passwords do not match. Please ensure that they are identical')
         } else {
-            fetch('http://localhost:8000/api/users', {
+            fetch('http://localhost:8000/api/users' , {
             method: 'POST',
             headers: {
-                'Content-Type': 'Application/JSON'
+               'Content-Type': 'Application/JSON'
             },
             body: {
-                username: this.state.username,
-                password: this.state.password,
-                nickname: this.state.nickname
-            } 
+                'username': this.state.username,
+                'password': this.state.password,
+                'nickname': this.state.nickname
+            }
             })
                 .then(res => {
+                    console.log(res)
                     if (res.ok){
                         res.json()
                     }
