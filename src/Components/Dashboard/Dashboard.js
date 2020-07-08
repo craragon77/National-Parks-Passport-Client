@@ -8,7 +8,7 @@ import './Dashboard.css'
 export default class Dashboard extends Component{
     componentDidMount(){
         fetch('http://localhost:8000/api/parks/')
-        .then( res => {
+        .then(res => {
             if (res.ok){
                 res.json()
             }

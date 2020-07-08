@@ -28,10 +28,11 @@ export default class Login extends Component {
         console.log('yeet this activated')
         let username = this.state.username
         let password = this.state.password
-        fetch("https://tranquil-wildwood-36569.herokuapp.com/api/users/")
+        console.log(username, password)
+        fetch("http://localhost:8000/api/users")
         .then(res => {
-            if (res.ok){
-                console.log(res)
+            if (res.status === 200){
+                return console.log(res)
             }
         })
         .then(responseJson => responseJson.filter())
