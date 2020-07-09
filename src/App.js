@@ -11,6 +11,9 @@ import Stamp from './Components/Stamp/Stamp';
 import Login from './Components/Login/Login';
 import STAMP from './Dummy-Data/Dummy-Stamp';
 import BUCKET from './Dummy-Data/Dummy-Bucketlist';
+import FindPark from '../src/Components/FindPark/FindPark';
+import TokenService from '../src/Services/TokenService';
+import Header from './Components/Header/Header'
 import './App.css';
 
 function App() {
@@ -25,14 +28,7 @@ function App() {
       <h1>National Parks Discover-E-Pass</h1>
       <h3>A Paperless Passport to America's National Parks and Monuments</h3>
     </section><br/>
-      <ul>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/dashboard'>Dashboard</Link></li>
-        <li><Link to='/StampList'>Stamps List</Link></li>
-        <li><Link to='/BucketList'>BucketList</Link></li>
-        <li id="login-nav"><Link to={'/Login'}>Login</Link></li>
-        <li id="signup-nav"><Link to={'/Signup'}>Signup</Link></li>
-      </ul>
+      <Header />
     </header>
     <body>
         <main>
@@ -54,6 +50,7 @@ function App() {
             <Route path='/Stamp/:id' render={(prop) => (
               <Stamp {...prop} Stamp_Dummy={Stamp_Dummy} />
             )} />
+            <Route path='/testing' component={FindPark} />
           </Switch>
       </main>
     </body>

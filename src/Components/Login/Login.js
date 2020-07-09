@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './Login.css';
+import config from '../../config'
+import TokenService from '../../Services/TokenService'
+import UserFetchService from '../../Services/UserFetchService'
 
 export default class Login extends Component {
     constructor(props){
@@ -21,6 +24,17 @@ export default class Login extends Component {
         this.setState({
             password: event.target.password
         })
+    }
+
+    handleSubmitBasicAuth = e => {
+        e.preventDefault()
+        console.log('the handle submit basic auth has activated!')
+        let username = this.state.username
+        let password = this.state.password
+        TokenService.saveAuthToken(
+            TokenService.makeBasicAuthToken(username, password)
+        )
+        UserFetchService.getUserByFullName(username, password)
     }
 
     fetchLogin = (e) => {
@@ -46,10 +60,10 @@ export default class Login extends Component {
             <>
             <body>
                 <h1 className="login-title">Login</h1>
-                <form className="login-form" onSubmit={this.fetchLogin}>
+                <form className="login-form" onSubmit={this.handleSubmitBasicAuth}>
                     <label for="username">Username</label><br/>
                     <input type="test" id="username-input" name="username" value={this.state.username} onChange={this.handleUsername} required/><br/>
-                    <label for="passwor">Password</label><br/>
+                    <label for="password">Password</label><br/>
                     <input type="text" id="password-input" name="password" value={this.state.password} onChange={this.handlePassword} required/><br/>
                     <button>Submit!</button>
                 </form>

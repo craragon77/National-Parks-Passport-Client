@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './Signup.css'
+import UserFetchService from '../../Services/UserFetchService';
+import TokenService from '../../Services/TokenService';
 
 
 export default class Signup extends Component {
@@ -35,15 +37,22 @@ export default class Signup extends Component {
             nickname: event.target.value
         })
     }
+    
 
     handleRegistration = (e) => {
         e.preventDefault();
         console.log([this.state.username, this.state.password, this.state.password2, this.state.nickname])
+        let username = this.state.username
+        let password = this.state.password
+        let nickname = this.state.nickname
+        TokenService.saveAuthToken(
+            TokenService.makeBasicAuthToken(username, password, nickname)
+        )
         //let params = `?username=${this.state.username}&password=${this.state.password}&nickname=${this.state.nickname}`
         if (this.state.password !== this.state.password2){
             return alert('your two passwords do not match. Please ensure that they are identical')
         } else {
-            fetch('http://localhost:8000/api/users' , {
+            /*fetch('http://localhost:8000/api/users' , {
             method: 'POST',
             headers: {
                'Content-Type': 'Application/JSON'
@@ -63,11 +72,10 @@ export default class Signup extends Component {
                         throw 'the else has activated'
                     }
                 })
-                .then(res => {
-                    console.log('good golly miss molly! the second .then statement has executed!')
-                })
-                .catch(error => 'There was an error!')
-            }
+                
+                .catch(error => 'There was an error!') */
+            } 
+            UserFetchService.postNewUser(username, password, nickname)
         }
         
     render(){
@@ -83,7 +91,7 @@ export default class Signup extends Component {
                         <label for="password">Password</label><br/>
                         <input type="text" id="password-input" name="password" value={this.state.password} onChange={this.handlePassword}/><br/> 
                         <label for="password-take2">Please Re-Enter Password</label><br/>
-                        <input for="password-take-2" id="password-take-2" name="password2" value={this.state.password2} onChange={this.handleRepeatPassword}/><br/>
+                        <input for="password-take-2" id="password-take-2" name="password2" value={this.state.password2} onChange={this.handleRepeatPassword} required/><br/>
                         <button>Sign me up!</button>
                     </form>
                     
