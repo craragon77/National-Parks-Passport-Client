@@ -28,10 +28,6 @@ export default class Header extends Component{
         return(
             <>
                 <header className="app-header">
-                <section className="title-section">
-                <h1>National Parks Discover-E-Pass</h1>
-                <h3>A Paperless Passport to America's National Parks and Monuments</h3>
-                </section><br/>
                 <ul>
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/dashboard'>Dashboard</Link></li>

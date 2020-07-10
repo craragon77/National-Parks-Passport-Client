@@ -60,7 +60,8 @@ const UserFetchService = {
         })
     },
     postNewUser(username, password, nickname){
-        let endpoint = `${config.API_ENDPOINT}/api/users`
+        //ok so apparently this DOES work in WITHIN the signup component itself
+        let endpoint = `${config.API_ENDPOINT}/api/users/account`
         fetch(endpoint, {
             headers: {
                 'content-type': 'application/json',

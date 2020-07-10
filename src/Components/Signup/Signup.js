@@ -52,12 +52,14 @@ export default class Signup extends Component {
         if (this.state.password !== this.state.password2){
             return alert('your two passwords do not match. Please ensure that they are identical')
         } else {
-            /*fetch('http://localhost:8000/api/users' , {
+            fetch('http://localhost:8000/api/users' , {
             method: 'POST',
             headers: {
-               'Content-Type': 'Application/JSON'
+               'Content-Type': 'Application/JSON',
+               'authorization': `basic ${TokenService.getAuthToken()}`
             },
             body: JSON.stringify({
+                //is it passing successfully because the sate is the variable here?
                 'username': this.state.username,
                 'password': this.state.password,
                 'nickname': this.state.nickname
@@ -73,9 +75,10 @@ export default class Signup extends Component {
                     }
                 })
                 
-                .catch(error => 'There was an error!') */
+                .catch(error => 'There was an error!') 
+                //UserFetchService.postNewUser(username, password, nickname)
             } 
-            UserFetchService.postNewUser(username, password, nickname)
+            
         }
         
     render(){
