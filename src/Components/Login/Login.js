@@ -22,7 +22,7 @@ export default class Login extends Component {
 
     handlePassword = (event) => {
         this.setState({
-            password: event.target.password
+            password: event.target.value
         })
     }
 
@@ -42,18 +42,26 @@ export default class Login extends Component {
         console.log('yeet this activated')
         let username = this.state.username
         let password = this.state.password
-        console.log(username, password)
-        fetch("http://localhost:8000/api/users/account", {
+        //console.log(username, password)
+        TokenService.saveAuthToken(
+            TokenService.makeBasicAuthToken(username, password)
+        )
+        fetch("http://localhost:8000/api/auth/login", {
+            'method': 'POST',
             headers: {
-                'authorization': `basic ${TokenService.getAuthToken()}`
-            }
+                'content-type': 'Application/JSON',
+                'authorization': `basic ${TokenService.getAuthToken()}`,
+            },
+            body: JSON.stringify( {
+                'username': username,
+                'password': password
+            })
         })
         .then(res => {
             if (res.status === 200){
-                return console.log(res)
+                return res.json()
             }
         })
-        .then(responseJson => responseJson.filter())
         .catch((error) => {
             console.log('something went wrong')
         })
@@ -66,7 +74,7 @@ export default class Login extends Component {
                 <h1 className="login-title">Login</h1>
                 <form className="login-form" onSubmit={this.fetchLogin}>
                     <label for="username">Username</label><br/>
-                    <input type="test" id="username-input" name="username" value={this.state.username} onChange={this.handleUsername} required/><br/>
+                    <input type="text" id="username-input" name="username" value={this.state.username} onChange={this.handleUsername} required/><br/>
                     <label for="password">Password</label><br/>
                     <input type="text" id="password-input" name="password" value={this.state.password} onChange={this.handlePassword} required/><br/>
                     <button>Submit!</button>
