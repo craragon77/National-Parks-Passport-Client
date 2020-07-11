@@ -14,6 +14,8 @@ import BUCKET from './Dummy-Data/Dummy-Bucketlist';
 import FindPark from '../src/Components/FindPark/FindPark';
 import TokenService from '../src/Services/TokenService';
 import Header from './Components/Header/Header'
+import PublicRoute from './Components/Routes/PublicRoute';
+import PrivateRoute from './Components/Routes/PublicRoute';
 import './App.css';
 
 function App() {
@@ -32,10 +34,12 @@ function App() {
     </header>
     <body>
         <main>
+          
           <Switch>
             <Route exact path='/' component={LandingPage}/>
-            <Route path='/Signup' component={Signup} />
-            <Route path='/Login' component={Login} />
+            <PublicRoute path='/Signup' component={Signup} />
+            <PublicRoute path='/Login' component={Login} />
+            {/*idk why but the Private route makes a weird error I can't figure out*/}
             <Route path='/Dashboard' render={(prop) => (
               <Dashboard {...prop} name={'Chris'} Stamp_Dummy={Stamp_Dummy} Bucket_Dummy={Bucket}/>
             )} />

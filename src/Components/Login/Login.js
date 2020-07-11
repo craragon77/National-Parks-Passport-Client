@@ -42,12 +42,12 @@ export default class Login extends Component {
         console.log('yeet this activated')
         let username = this.state.username
         let password = this.state.password
-        //console.log(username, password)
+        console.log(username, password)
         TokenService.saveAuthToken(
             TokenService.makeBasicAuthToken(username, password)
         )
         fetch("http://localhost:8000/api/auth/login", {
-            'method': 'POST',
+            method: 'POST',
             headers: {
                 'content-type': 'Application/JSON',
                 'authorization': `basic ${TokenService.getAuthToken()}`,
@@ -58,6 +58,7 @@ export default class Login extends Component {
             })
         })
         .then(res => {
+            console.log(res)
             if (res.status === 200){
                 return res.json()
             }

@@ -21,9 +21,9 @@ const ParkFetchService = {
             .catch(error => console.log('there was an error in the fetchAllParks endpoint!'))
         )
     },
-    getParkByFullName(){
+    getParkByFullName(params){
         return(
-            fetch(`${config.API_ENDPOINT}/api/parks/name/:fullname`, {
+            fetch(`${config.API_ENDPOINT}/api/parks/name/${params}`, {
                 header: {
                     'authorization': `basic ${TokenService.getAuthToken()}`,
                     //more code will go in here eventually
@@ -37,7 +37,7 @@ const ParkFetchService = {
                 }
             })
             .then(resJson => {
-                console.log(res.json)
+                console.log(resJson)
             })
             .catch(() => {
                 console.log('there was an error in the parksByFullName endpoint!')
@@ -60,7 +60,7 @@ const ParkFetchService = {
                 }
             })
             .then(resJson => {
-                console.log(res.json)
+                console.log(resJson)
             })
             .catch(() => {
                 console.log('there was an error in the GetParkById endpoint!')
