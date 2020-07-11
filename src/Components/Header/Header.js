@@ -2,16 +2,19 @@ import React, {Component} from 'react';
 import TokenService from '../../Services/TokenService';
 import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 export default class Header extends Component{
     handleLogOutClick = () => {
         //some code will eventually go in here to remove the cookie or whatever form the client
+        TokenService.clearAuthToken()
+        //you should have a push or something so that you can go back to the home page when its clicked
+        //this.props.history.push('/')
     }
     renderLogOutLink = () => {
         console.log('logout has executed')
         return(
-            <li><Link to='/'>Signout</Link></li>
+            <li><Link to='/' onClick={this.handleLogOutClick}>Signout</Link></li>
         )
     }
     renderLoginLink = () => {
