@@ -44,7 +44,8 @@ export default class Login extends Component {
         let password = this.state.password
         console.log(username, password)
         TokenService.saveAuthToken(
-            TokenService.makeBasicAuthToken(username, password)
+            TokenService.makeBasicAuthToken(username, password),
+            console.log(TokenService.makeBasicAuthToken(username, password))
         )
         fetch("http://localhost:8000/api/auth/login", {
             method: 'POST',
