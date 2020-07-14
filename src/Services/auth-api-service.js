@@ -1,13 +1,16 @@
 import config from '../config'
 
 const AuthApiService = {
-    postLogin(credentials){
+    postLogin(username, password){
         return fetch(`${config.API_ENDPOINT}/api/auth/login`, {
             method: 'POST',
             headers: {
                 'content-typo': 'application/json',
             },
-            body: JSON.stringify(credentials)
+            body: JSON.stringify({
+                username: username,
+                password: password
+            })
         })
         .then(res => {
             //console.log(credentials)
@@ -15,9 +18,10 @@ const AuthApiService = {
               //  ? res.json().then(e => Promise.reject(e))
                 //: res.json()
             //i have been playing with both the upper and lower code blocks cause idk which is better lol
-            return res.status(401).json({
-                error: {message: 'aaaaaaahhhhhhhhh'}
-            })
+            if (!res.ok){
+                return res.status(401).json(`ay you can't come in no girls allowed #gtfo`)
+            }
+            return res.json('ayy it worked in the postLogin thingy')
             
         })
     }
