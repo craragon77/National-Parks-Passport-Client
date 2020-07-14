@@ -75,16 +75,23 @@ export default class Login extends Component {
         this.setState({error: null})
         let username = this.state.username
         let password = this.state.password
+        console.log(username + '+' + password)
         //there was a token service thingy but I deleted it
         AuthApiService.postLogin(username, password)
             //console.log(username + ':' + password)
             .then(res => {
+                //this.setState({
+                    //username: '',
+                    //password: ''
+                //})
+                TokenService.saveAuthToken(res.authToken)
+                //i'm told that a loginsuccess() prop is necessary here but idk what that even means
+            })
+            .then(() => {
                 this.setState({
                     username: '',
                     password: ''
                 })
-                TokenService.saveAuthToken(res.authToken)
-                //i'm told that a loginsuccess() prop is necessary here but idk what that even means
             })
             .catch(res => {
                 console.log('ooooh noooo the handle submit auth for jwt has an error')
