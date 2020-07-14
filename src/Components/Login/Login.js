@@ -79,22 +79,16 @@ export default class Login extends Component {
         //there was a token service thingy but I deleted it
         AuthApiService.postLogin(username, password)
             //console.log(username + ':' + password)
-            .then(res => {
-                //this.setState({
-                    //username: '',
-                    //password: ''
-                //})
-                TokenService.saveAuthToken(res.authToken)
+            .then(authToken => {
+                
+                //ok so apparently you can't get authToken of undefined (but apparently authToken on its own is undefined)
+                console.log(authToken)
+                TokenService.saveAuthToken(authToken)
                 //i'm told that a loginsuccess() prop is necessary here but idk what that even means
             })
-            .then(() => {
-                this.setState({
-                    username: '',
-                    password: ''
-                })
-            })
+            
             .catch(res => {
-                console.log('ooooh noooo the handle submit auth for jwt has an error')
+                console.dir(res)
             })
     }
 
