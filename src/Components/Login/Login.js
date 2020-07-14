@@ -79,11 +79,11 @@ export default class Login extends Component {
         //there was a token service thingy but I deleted it
         AuthApiService.postLogin(username, password)
             //console.log(username + ':' + password)
-            .then(authToken => {
+            .then(res => {
                 
                 //ok so apparently you can't get authToken of undefined (but apparently authToken on its own is undefined)
-                console.log(authToken)
-                TokenService.saveAuthToken(authToken)
+                console.log(res.authToken)
+                TokenService.saveAuthToken(res.authToken)
                 //i'm told that a loginsuccess() prop is necessary here but idk what that even means
             })
             
