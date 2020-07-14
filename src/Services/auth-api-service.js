@@ -6,18 +6,19 @@ const AuthApiService = {
             method: 'POST',
             headers: {
                 'content-typo': 'application/json',
-            }
+            },
+            body: JSON.stringify(credentials)
         })
         .then(res => {
-            if (!res.ok){
-                return(
-                    res.status(400).json({
-                        error: {message: 'aaaaahhhhh the auth-api-service thingy is mad at you!'}
-                    })
-                )
-
-            }
-            res.json('ayyy it worked')
+            //console.log(credentials)
+            //(!res.ok)
+              //  ? res.json().then(e => Promise.reject(e))
+                //: res.json()
+            //i have been playing with both the upper and lower code blocks cause idk which is better lol
+            return res.status(401).json({
+                error: {message: 'aaaaaaahhhhhhhhh'}
+            })
+            
         })
     }
 }
