@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import './Signup.css'
 import UserFetchService from '../../Services/UserFetchService';
 import TokenService from '../../Services/TokenService';
+import AuthApiService from '../../Services/auth-api-service';
 
 
 export default class Signup extends Component {
@@ -12,7 +13,7 @@ export default class Signup extends Component {
             username: '',
             password: '',
             password2: '',
-            nickname: '',
+            error: null
         }
     }
 
@@ -44,15 +45,25 @@ export default class Signup extends Component {
         console.log([this.state.username, this.state.password, this.state.password2, this.state.nickname])
         let username = this.state.username
         let password = this.state.password
-        let nickname = this.state.nickname
+        
         TokenService.saveAuthToken(
-            TokenService.makeBasicAuthToken(username, password, nickname)
+            TokenService.makeBasicAuthToken(username, password)
         )
         //let params = `?username=${this.state.username}&password=${this.state.password}&nickname=${this.state.nickname}`
         if (this.state.password !== this.state.password2){
             return alert('your two passwords do not match. Please ensure that they are identical')
         } else {
-            fetch('http://localhost:8000/api/users' , {
+            AuthApiService.postUser(username, password)
+            .then(user => {
+                this.setState({
+                    username: '',
+                    password: ''
+                })
+            })
+            .catch(err => {
+                this.setState({error: err.error})
+            })
+            /*fetch(`${AuthApiService.postUser}` , {
             method: 'POST',
             headers: {
                'Content-Type': 'Application/JSON',
@@ -77,9 +88,9 @@ export default class Signup extends Component {
                 
                 .catch(error => 'There was an error!') 
                 //UserFetchService.postNewUser(username, password, nickname)
-            } 
+            }  */
             
-        }
+        }}
         
     render(){
         return(
