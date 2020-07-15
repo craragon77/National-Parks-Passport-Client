@@ -80,10 +80,27 @@ export default class Login extends Component {
         AuthApiService.postLogin(username, password)
             //console.log(username + ':' + password)
             .then(res => {
+                console.log(res)
                 
+                return (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+                //i have been playing with both the upper and lower code blocks cause idk which is better lol
+                //if (!res.ok){
+                  //  return res.status(401).json(`ay you can't come in no girls allowed #gtfo`)
+                //}
+                //return res.json('ayy it worked in the postLogin thingy')
+                
+            })
+            .then(data => {
+                this.setState({
+                    username: '',
+                    password: ''
+                })
                 //ok so apparently you can't get authToken of undefined (but apparently authToken on its own is undefined)
+                console.log(data)
                 
-                TokenService.saveAuthToken(res.authToken)
+                TokenService.saveAuthToken(data.authToken)
                 //i'm told that a loginsuccess() prop is necessary here but idk what that even means
             })
             
