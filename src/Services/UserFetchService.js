@@ -59,34 +59,16 @@ const UserFetchService = {
             console.log(`aaaaaaaahhhhhh somethings wrong with the getUserById endpoint`)
         })
     },
-    postNewUser(username, password, nickname){
-        //ok so apparently this DOES work in WITHIN the signup component itself
-        let endpoint = `${config.API_ENDPOINT}/api/users/account`
-        fetch(endpoint, {
+    postNewUser(username, password){
+        return fetch(`${config.API_ENDPOINT}/api/users/newUser`, {
+            method: 'POST',
             headers: {
-                'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`,
-                //i wonder whats gonna go in here
+                'content-type': 'application/json'
             },
             body: JSON.stringify({
                 'username': username,
-                'password': password,
-                'nickname': nickname
-            })
-        })
-        .then(res => {
-            console.log(config.API_ENDPOINT)
-            
-            if (res.status == 201){
-                console.log('user successfully posted')
-                res.json()
-            } else {
-                console.log('the `else` has activated, yo')
-            }
-        })
-        .catch(() => {
-            console.log(`Sweet Jesus, the postNewUser isn't working!`)
-            console.log(endpoint)
+                'password': password
+            }),
         })
     }
 }

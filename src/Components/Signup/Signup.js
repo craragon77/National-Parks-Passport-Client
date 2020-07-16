@@ -38,66 +38,41 @@ export default class Signup extends Component {
             nickname: event.target.value
         })
     }
-    
 
-    handleRegistration = (e) => {
+    handleNewRegistration = (e) => {
         e.preventDefault();
-        console.log([this.state.username, this.state.password, this.state.password2, this.state.nickname])
         let username = this.state.username
         let password = this.state.password
-        
-        TokenService.saveAuthToken(
-            TokenService.makeBasicAuthToken(username, password)
-        )
-        //let params = `?username=${this.state.username}&password=${this.state.password}&nickname=${this.state.nickname}`
+
         if (this.state.password !== this.state.password2){
             return alert('your two passwords do not match. Please ensure that they are identical')
         } else {
-            AuthApiService.postUser(username, password)
-            .then(user => {
+            UserFetchService.postNewUser(username, password)
+            //ok so this 'res' is undefined but its posting
+            .then(res => {
+                //there is an error here (even though its posting)
+                console.log(res)
+                return (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            })
+    
+            .then(data => {
                 this.setState({
                     username: '',
                     password: ''
                 })
-            })
-            .catch(err => {
-                this.setState({error: err.error})
-            })
-            /*fetch(`${AuthApiService.postUser}` , {
-            method: 'POST',
-            headers: {
-               'Content-Type': 'Application/JSON',
-               'authorization': `basic ${TokenService.getAuthToken()}`
-            },
-            body: JSON.stringify({
-                //is it passing successfully because the sate is the variable here?
-                'username': this.state.username,
-                'password': this.state.password,
-                
-            })
-            })
-                .then(res => {
-                    console.log(res)
-                    console.log(res.status)
-                    if (res.ok){
-                        return res.json()
-                    } else{
-                        throw 'the else has activated'
-                    }
-                })
-                
-                .catch(error => 'There was an error!') 
-                //UserFetchService.postNewUser(username, password, nickname)
-            }  */
-            
-        }}
+                console.log(data)
+            }) 
+        }
+    }
         
     render(){
         return(
             <>
                 <body>
                     <h1 className="signup_title">Signup!</h1>
-                    <form className="signup-form" onSubmit={this.handleRegistration}>
+                    <form className="signup-form" onSubmit={this.handleNewRegistration}>
                         <label for="username">Username</label><br/>
                         <input type="text" id="username-input" name="username" value={this.state.username} onChange={this.handleUsername}/><br/>
                         
