@@ -60,7 +60,8 @@ export default class Signup extends Component {
             .then(data => {
                 this.setState({
                     username: '',
-                    password: ''
+                    password: '',
+                    password2: ''
                 })
                 console.log(data)
             }) 
