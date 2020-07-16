@@ -2,19 +2,26 @@ import React, {Component} from 'react'
 import StampList from '../StampList/StampList'
 import BucketList from'../BucketList/BucketList'
 import {Route, Link} from 'react-router-dom'
+import UserFetchService from '../../Services/UserFetchService';
+import StampbookFetchService from '../../Services/StampbookFetchService'
 import './Dashboard.css'
 
 
 export default class Dashboard extends Component{
     componentDidMount(){
-        fetch('http://localhost:8000/api/parks/')
-        .then(res => {
-            if (res.ok){
-                res.json()
-            }
-        })
-        .then(res => console.log(res))
-        .catch(error => 'something went wrong, whoops')
+        // needs to make a fetch request to ALL THREE ENDPOINTS; one for users, one to stampbook, and one to bucketlist
+        UserFetchService.getUserById()
+            .then(res => {
+                if (res.ok){
+                    return res.json()
+                }
+            })
+            .then(resJson => {
+                console.log(resJson)
+            })
+            .catch(() => {
+                console.log(`aaaaaaaahhhhhh somethings wrong with the getUserById endpoint`)
+            })
     }
     render(){
         return(

@@ -21,23 +21,13 @@ const UserFetchService = {
             console.log(`aaaaaaaahhhhhh somethings wrong with the getAllUsers endpoint`)
         })
     },
+    //where will the program get the userId? from context? or what?
     getUserById(userId){
         fetch(`${config.API_ENDPOINT}/api/users/${userId}`, {
             headers: {
                 'authorization': `basic ${TokenService.getAuthToken()}`,
                 //headers will go in here
             }
-        })
-        .then(res => {
-            if (res.ok){
-                return res.json()
-            }
-        })
-        .then(resJson => {
-            console.log(resJson)
-        })
-        .catch(() => {
-            console.log(`aaaaaaaahhhhhh somethings wrong with the getUserById endpoint`)
         })
     },
     getUserByFullName(fullname){
