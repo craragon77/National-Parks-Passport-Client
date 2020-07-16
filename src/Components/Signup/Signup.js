@@ -56,15 +56,21 @@ export default class Signup extends Component {
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
             })
-    
             .then(data => {
                 this.setState({
                     username: '',
                     password: '',
                     password2: ''
                 })
-                console.log(data)
-            }) 
+            })
+            .then(() => {
+                alert(`Horray! You have successfully made an account! You will not be redirected to the login page to access your account!`)
+                this.props.history.push('/login')
+            })
+            .catch(() => {
+                //think about the UX for this!
+                console.log(`aaaaaahhhhhh there was an error!`)
+            })
         }
     }
         
