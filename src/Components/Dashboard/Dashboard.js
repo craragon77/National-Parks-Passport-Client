@@ -3,14 +3,23 @@ import StampList from '../StampList/StampList'
 import BucketList from'../BucketList/BucketList'
 import {Route, Link} from 'react-router-dom'
 import UserFetchService from '../../Services/UserFetchService';
-import StampbookFetchService from '../../Services/StampbookFetchService'
+import StampbookFetchService from '../../Services/StampbookFetchService';
+import config from '../../config';
 import './Dashboard.css'
 
 
 export default class Dashboard extends Component{
+    // needs to make a fetch request to ALL THREE ENDPOINTS; one for users, one to stampbook, and one to bucketlist
     componentDidMount(){
-        // needs to make a fetch request to ALL THREE ENDPOINTS; one for users, one to stampbook, and one to bucketlist
-        UserFetchService.getUserById()
+        //ok what if I target the user_id of the payload
+        //ok ok ok so lets take stock: window.localStorage.Authorization comes back as defined, but add payload and its undefined
+
+        let token = window.localStorage.Authorization
+        console.log(token)
+
+        //then working on 
+
+        /*UserFetchService.getUserById(token)
             .then(res => {
                 if (res.ok){
                     return res.json()
@@ -22,7 +31,8 @@ export default class Dashboard extends Component{
             .catch(() => {
                 console.log(`aaaaaaaahhhhhh somethings wrong with the getUserById endpoint`)
             })
-    }
+            */
+    } 
     render(){
         return(
             <>
@@ -35,7 +45,7 @@ export default class Dashboard extends Component{
                     <main className='Dashboard'>
                         <h2>You have {this.props.Stamp_Dummy.length} National Park Stamps</h2><br/>
                         <Link to={'/StampList'}>
-                            View Your Stamps
+                            View Your Stampbook
                         </Link><br/>
                         <Link to={'/AddStamp'}>Add a new Stamp</Link><br/>
                         <h2>You have {this.props.Bucket_Dummy.length} National Parks on your Bucket List</h2>
