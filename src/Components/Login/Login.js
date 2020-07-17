@@ -103,7 +103,9 @@ export default class Login extends Component {
                 TokenService.saveAuthToken(data.authToken)
                 //i'm told that a loginsuccess() prop is necessary here but idk what that even means
             })
-            
+            .then(() => {
+                this.props.history.push('/dashboard')
+            })
             .catch(res => {
                 console.dir(res)
             })

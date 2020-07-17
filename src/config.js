@@ -1,5 +1,5 @@
 export default{
-    TOKEN_KEY: 'Guest-1',
+    TOKEN_KEY: 'Authorization',
     //TOKEN_USERNAME: 'Guest-1',
     //TOKEN_PASSWORD: 'Password-1',
     /*TOKEN_KEY:{
