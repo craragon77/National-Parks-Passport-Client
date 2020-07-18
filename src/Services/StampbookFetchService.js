@@ -41,7 +41,7 @@ const StampBookFetchService = {
         })
     },
     postNewStamp(userId, parkId, stampDate, comments){
-        fetch(`http://${config.API_ENDPOINT}/api/stampbook` , {
+        fetch(`${config.API_ENDPOINT}/api/stampbook` , {
             method: 'POST',
             headers: {
                 'authorization': `basic ${TokenService.getAuthToken()}`,
@@ -68,6 +68,20 @@ const StampBookFetchService = {
                 })
                 
                 .catch(error => 'There was an error!')
+    },
+    fetchUserStamp(id){
+        fetch(`${config.API_ENDPOINT}/api/stampbook/userId/${id}`)
+            .then(res => {
+                if (res.ok){
+                    return res.json()
+                }
+            })
+            .then(resJson => {
+                console.log(resJson)
+            })
+            .catch(error => {
+                `aaaaaah there are literally no stamps like this in this bitch!`
+            })
     }
 }
 
