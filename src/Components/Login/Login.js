@@ -101,6 +101,7 @@ export default class Login extends Component {
                 console.log(data)
                 
                 TokenService.saveAuthToken(data.authToken)
+                TokenService.saveUserId(data.storedId)
                 //i'm told that a loginsuccess() prop is necessary here but idk what that even means
             })
             .then(() => {

@@ -9,6 +9,7 @@ const TokenService = {
     },
     clearAuthToken(){
         window.localStorage.removeItem(config.TOKEN_KEY)
+        window.localStorage.removeItem(config.ID_TOKEN)
     },
     hasAuthToken(){
         console.log('!!TokenService.getAuthToken()')
@@ -16,6 +17,9 @@ const TokenService = {
     },
     makeBasicAuthToken(username, password){
         return window.btoa(`${username}:${password}`)
+    },
+    saveUserId(id){
+        window.localStorage.setItem(config.ID_TOKEN, id)
     }
 }
 

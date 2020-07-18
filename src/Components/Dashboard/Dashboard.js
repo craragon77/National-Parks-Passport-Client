@@ -14,12 +14,9 @@ export default class Dashboard extends Component{
         //ok what if I target the user_id of the payload
         //ok ok ok so lets take stock: window.localStorage.Authorization comes back as defined, but add payload and its undefined
 
-        let token = window.localStorage.Authorization
-        console.log(token)
-
         //then working on 
-
-        /*UserFetchService.getUserById(token)
+        let id = window.localStorage.token_id
+        UserFetchService.getUserById(id)
             .then(res => {
                 if (res.ok){
                     return res.json()
@@ -31,7 +28,7 @@ export default class Dashboard extends Component{
             .catch(() => {
                 console.log(`aaaaaaaahhhhhh somethings wrong with the getUserById endpoint`)
             })
-            */
+            
     } 
     render(){
         return(
