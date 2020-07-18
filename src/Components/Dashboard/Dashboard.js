@@ -17,6 +17,7 @@ export default class Dashboard extends Component{
         //then working on 
         let id = window.localStorage.token_id
         UserFetchService.getUserById(id)
+        //if there is ever a .then() statement here it comes back as undefined cause the computer is mad at me
             
     } 
     render(){
