@@ -17,17 +17,6 @@ export default class Dashboard extends Component{
         //then working on 
         let id = window.localStorage.token_id
         UserFetchService.getUserById(id)
-            .then(res => {
-                if (res.ok){
-                    return res.json()
-                }
-            })
-            .then(resJson => {
-                console.log(resJson)
-            })
-            .catch(() => {
-                console.log(`aaaaaaaahhhhhh somethings wrong with the getUserById endpoint`)
-            })
             
     } 
     render(){

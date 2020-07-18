@@ -27,49 +27,6 @@ export default class Login extends Component {
         })
     }
 
-    handleSubmitBasicAuth = e => {
-        e.preventDefault()
-        console.log('the handle submit basic auth has activated!')
-        let username = this.state.username
-        let password = this.state.password
-        TokenService.saveAuthToken(
-            TokenService.makeBasicAuthToken(username, password)
-        )
-        UserFetchService.getUserByFullName(username, password)
-    }
-
-    fetchLogin = (e) => {
-        e.preventDefault()
-        console.log('yeet this activated')
-        let username = this.state.username
-        let password = this.state.password
-        console.log(username, password)
-        TokenService.saveAuthToken(
-            TokenService.makeBasicAuthToken(username, password),
-            console.log(TokenService.makeBasicAuthToken(username, password))
-        )
-        fetch("http://localhost:8000/api/auth/login", {
-            method: 'POST',
-            headers: {
-                'content-type': 'Application/JSON',
-                'authorization': `basic ${TokenService.getAuthToken()}`,
-            },
-            body: JSON.stringify( {
-                'username': username,
-                'password': password
-            })
-        })
-        .then(res => {
-            console.log(res)
-            if (res.status === 200){
-                return res.json()
-            }
-        })
-        .catch((error) => {
-            console.log('something went wrong')
-        })
-    }
-
     handleSubmitJwtAuth = (e) => {
         e.preventDefault()
         this.setState({error: null})

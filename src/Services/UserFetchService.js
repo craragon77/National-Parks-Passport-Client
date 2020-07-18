@@ -26,9 +26,21 @@ const UserFetchService = {
         //where is this ID gonna come from?
         fetch(`${config.API_ENDPOINT}/api/users/id/${id}`, {
             headers: {
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'Authorization': `${TokenService.getAuthToken()}`,
                 //headers will go in here
             }
+        })
+        .then(res => {
+            if (res.ok){
+                return res.json()
+            }
+        })
+        .then(resJson => {
+            let userInfo = resJson
+            console.log(userInfo)
+        })
+        .catch(() => {
+            console.log(`aaaaaaaahhhhhh somethings wrong with the getUserById endpoint`)
         })
     },
     getUserByFullName(fullname){
