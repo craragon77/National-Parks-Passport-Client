@@ -10,6 +10,14 @@ import './Dashboard.css'
 
 export default class Dashboard extends Component{
     // needs to make a fetch request to ALL THREE ENDPOINTS; one for users, one to stampbook, and one to bucketlist
+    constructor(props){
+        super(props)
+        this.state =  {
+            username: '',
+            stamps: '',
+            bucketlist: ''
+        }
+    }
     componentDidMount(){
         //ok what if I target the user_id of the payload
         //ok ok ok so lets take stock: window.localStorage.Authorization comes back as defined, but add payload and its undefined
@@ -17,9 +25,24 @@ export default class Dashboard extends Component{
         //then working on 
         let id = window.localStorage.token_id
         UserFetchService.getUserById(id)
-        //if there is ever a .then() statement here it comes back as undefined cause the computer is mad at me
+         //if there is ever a .then() statement here it comes back as undefined cause the computer is mad at me
+        .then(res => {
+            if (res.ok){
+                return res.json()
+            }
+        })
+        .then(resJson => {
+            let userInfo = resJson
+            console.log(userInfo)
+        })
+        .catch(() => {
+            console.log(`aaaaaaaahhhhhh somethings wrong with the getUserById endpoint`)
+        })
+       
+
+        
             
-    } 
+    }
     render(){
         return(
             <>

@@ -80,7 +80,7 @@ const StampBookFetchService = {
                 console.log(resJson)
             })
             .catch(error => {
-                `aaaaaah there are literally no stamps like this in this bitch!`
+                console.log(`aaaaaah there are literally no stamps like this in this bitch!`)
             })
     }
 }
