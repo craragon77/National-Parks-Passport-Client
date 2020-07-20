@@ -4,6 +4,7 @@ import BucketList from'../BucketList/BucketList'
 import {Route, Link} from 'react-router-dom'
 import UserFetchService from '../../Services/UserFetchService';
 import StampbookFetchService from '../../Services/StampbookFetchService';
+import BucketlistFetchService from '../../Services/BucketlistFetchService';
 import config from '../../config';
 import './Dashboard.css'
 
@@ -26,22 +27,49 @@ export default class Dashboard extends Component{
         let id = window.localStorage.token_id
         UserFetchService.getUserById(id)
          //if there is ever a .then() statement here it comes back as undefined cause the computer is mad at me
-        .then(res => {
-            if (res.ok){
-                return res.json()
-            }
-        })
-        .then(resJson => {
-            let userInfo = resJson
-            console.log(userInfo)
-        })
-        .catch(() => {
-            console.log(`aaaaaaaahhhhhh somethings wrong with the getUserById endpoint`)
-        })
-       
+            .then(res => {
+                if (res.ok){
+                    return res.json()
+                }
+            })
+            .then(resJson => {
+                this.setState({
+                    username: resJson.username
+                })
+            })
+            .catch(() => {
+                console.log(`aaaaaaaahhhhhh somethings wrong with the getUserById endpoint`)
+            })
 
-        
-            
+        StampbookFetchService.fetchUserStamp(id)
+            .then(res => {
+                if (res.ok){
+                    return res.json()
+                }
+            })
+            .then(resJson => {
+                this.setState({
+                    stamps: resJson.length
+                })
+            })
+            .catch(() => {
+                console.log(`aaaaaaaahhhhhh somethings wrong with the getUserById endpoint`)
+            })
+
+        BucketlistFetchService.getBucketlistUser(id)
+            .then(res => {
+                if (res.ok){
+                    return res.json()
+                }
+            })
+            .then(resJson => {
+                this.setState({
+                    bucketlist: resJson.length
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
     render(){
         return(
@@ -49,16 +77,16 @@ export default class Dashboard extends Component{
                 <body>
                     <section>
                         <div>
-                            <h1 className="welcome-title">Welcome {this.props.name}</h1>
+                            <h1 className="welcome-title">Welcome {this.state.username}</h1>
                         </div>
                     </section>
                     <main className='Dashboard'>
-                        <h2>You have {this.props.Stamp_Dummy.length} National Park Stamps</h2><br/>
+                        <h2>You have {this.state.stamps} National Park Stamps</h2><br/>
                         <Link to={'/StampList'}>
                             View Your Stampbook
                         </Link><br/>
                         <Link to={'/AddStamp'}>Add a new Stamp</Link><br/>
-                        <h2>You have {this.props.Bucket_Dummy.length} National Parks on your Bucket List</h2>
+                        <h2>You have {this.state.bucketlist} National Parks on your Bucket List</h2>
                         <Link to={'/Bucketlist'}>
                             View Your BucketList
                         </Link><br/>

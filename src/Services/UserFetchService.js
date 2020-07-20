@@ -24,7 +24,7 @@ const UserFetchService = {
     //where will the program get the userId? from context? or what?
     getUserById(id){
         //where is this ID gonna come from?
-        fetch(`${config.API_ENDPOINT}/api/users/id/${id}`, {
+        return fetch(`${config.API_ENDPOINT}/api/users/id/${id}`, {
             headers: {
                 'Authorization': `${TokenService.getAuthToken()}`,
                 //headers will go in here

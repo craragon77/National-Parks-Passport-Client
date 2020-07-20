@@ -70,18 +70,12 @@ const StampBookFetchService = {
                 .catch(error => 'There was an error!')
     },
     fetchUserStamp(id){
-        fetch(`${config.API_ENDPOINT}/api/stampbook/userId/${id}`)
-            .then(res => {
-                if (res.ok){
-                    return res.json()
-                }
-            })
-            .then(resJson => {
-                console.log(resJson)
-            })
-            .catch(error => {
-                console.log(`aaaaaah there are literally no stamps like this in this bitch!`)
-            })
+        return fetch(`${config.API_ENDPOINT}/api/stampbook/userId/${id}`, {
+            headers: {
+                'authorization': `${TokenService.getAuthToken()}`
+            }
+        })
+            
     }
 }
 

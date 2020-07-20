@@ -38,7 +38,7 @@ const BucketlistFetchService = {
             console.log('ahhh the getAllBucketlist service thingy is being all broken or whatever')
         })
     },
-    postNewBucketlist(){
+    /*postNewBucketlist(){
         fetch(`${config.API_ENDPOINT}/bucketlist`, {
             headers: {
                 'content-type': 'application/json'
@@ -58,5 +58,14 @@ const BucketlistFetchService = {
         .catch(() => {
             console,log('something went bump in the night with the postNewBucketlist endpoint')
         })
+    }, */
+    getBucketlistUser(id){
+        return fetch(`${config.API_ENDPOINT}/api/bucketlist/userId/${id}`, {
+            headers: {
+                'authorization': `${TokenService.getAuthToken()}`
+            }
+        })
     }
 }
+
+export default BucketlistFetchService

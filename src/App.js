@@ -40,9 +40,7 @@ function App() {
             <PublicRoute path='/Signup' component={Signup} />
             <PublicRoute path='/Login' component={Login} />
             {/*idk why but the Private route makes a weird error I can't figure out*/}
-            <Route path='/Dashboard' render={(prop) => (
-              <Dashboard {...prop} name={'Chris'} Stamp_Dummy={Stamp_Dummy} Bucket_Dummy={Bucket}/>
-            )} />
+            <Route path='/Dashboard' component={Dashboard} />
             <Route path='/StampList' render={(prop) => (
                 <StampList {...prop} Stamp_Dummy={Stamp_Dummy} />
             )} />
