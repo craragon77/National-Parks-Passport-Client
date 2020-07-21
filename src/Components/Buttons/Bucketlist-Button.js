@@ -5,14 +5,14 @@ export default class BucketlistButton extends Component {
     addBucketlist = (e) => {
         BucketlistFetchService.postNewBucketlist(this.props.fullname, this.props.id)
         .then(res => {
-            if (res.status == 201){
-                console.log('user successfully posted!')
-                return res.json()
+            if (res.ok){
+                alert(`The destination ${this.props.fullname} has been added to your bucketlist!`)
+                return res.json
             }
         })
-        .then(alert(`The destination ${this.props.fullname} has been added to your bucketlist!`))
-        .catch(() => {
-            console.log('something went bump in the night with the postNewBucketlist endpoint')
+        .catch((error) => {
+            alert(`Unfortunatly something went wrong! This park was unable to be added to your bucketlist`)
+            console.log(error)
         })
     }
     render(){
