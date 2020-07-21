@@ -47,7 +47,7 @@ export default class FindPark extends Component{
         //but this only shows the top of the ternary. If/else doesn't work
         const parkResults = this.state.parks
             ? <p>Nothing to show yet!</p>
-            //how the beans to you map over the component?
+            //why doesn't this show up how I expect it to?
             : <p>wow so much to show!</p>
         return(
             <>
