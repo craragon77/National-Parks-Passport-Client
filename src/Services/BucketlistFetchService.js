@@ -39,26 +39,17 @@ const BucketlistFetchService = {
         })
     },
     postNewBucketlist(user_id, park_id){
-        fetch(`${config.API_ENDPOINT}/bucketlist`, {
+        return fetch(`${config.API_ENDPOINT}/api/bucketlist`, {
             method: 'POST',
             headers: {
                 'authorization': `${TokenService.getAuthToken()}`,
                 'content-type': 'application/json'
                 //headers bb
             },
-            body: {
+            body: JSON.stringify({
                 "user_id": user_id,
                 "park_id": park_id
-            }
-        })
-        .then(res => {
-            if (res.status == 201){
-                console.log('user successfully posted!')
-                return res.json()
-            }
-        })
-        .catch(() => {
-            console.log('something went bump in the night with the postNewBucketlist endpoint')
+            })
         })
     }, 
     getBucketlistUser(id){
