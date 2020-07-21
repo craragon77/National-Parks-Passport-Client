@@ -41,11 +41,11 @@ const StampBookFetchService = {
         })
     },
     postNewStamp(userId, parkId, stampDate, comments){
-        fetch(`${config.API_ENDPOINT}/api/stampbook` , {
+        return fetch(`${config.API_ENDPOINT}/api/stampbook` , {
             method: 'POST',
             headers: {
-                'authorization': `basic ${TokenService.getAuthToken()}`,
-               'Content-Type': 'Application/JSON'
+                'authorization': `${TokenService.getAuthToken()}`,
+                'Content-Type': 'Application/JSON'
             },
             body: JSON.stringify({
                 user_id: userId,
@@ -54,20 +54,6 @@ const StampBookFetchService = {
                 comments: comments
             })
             })
-                .then(res => {
-                    console.log(res)
-                    console.log(res.status == 201)
-                    if (res.ok){
-                        return res.json()
-                        .then(res => {
-                            console.log('good golly miss molly! the second .then statement has executed!')
-                        })
-                    } else{
-                        throw 'the else has activated'
-                    }
-                })
-                
-                .catch(error => 'There was an error!')
     },
     fetchUserStamp(id){
         return fetch(`${config.API_ENDPOINT}/api/stampbook/userId/${id}`, {

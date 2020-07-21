@@ -38,15 +38,17 @@ const BucketlistFetchService = {
             console.log('ahhh the getAllBucketlist service thingy is being all broken or whatever')
         })
     },
-    /*postNewBucketlist(){
+    postNewBucketlist(user_id, park_id){
         fetch(`${config.API_ENDPOINT}/bucketlist`, {
+            method: 'POST',
             headers: {
+                'authorization': `${TokenService.getAuthToken()}`,
                 'content-type': 'application/json'
                 //headers bb
             },
             body: {
-                user_id: userId,
-                park_id: park_id
+                "user_id": user_id,
+                "park_id": park_id
             }
         })
         .then(res => {
@@ -56,9 +58,9 @@ const BucketlistFetchService = {
             }
         })
         .catch(() => {
-            console,log('something went bump in the night with the postNewBucketlist endpoint')
+            console.log('something went bump in the night with the postNewBucketlist endpoint')
         })
-    }, */
+    }, 
     getBucketlistUser(id){
         return fetch(`${config.API_ENDPOINT}/api/bucketlist/userId/${id}`, {
             headers: {

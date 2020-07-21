@@ -44,15 +44,11 @@ function App() {
             <Route path='/StampList' render={(prop) => (
                 <StampList {...prop} Stamp_Dummy={Stamp_Dummy} />
             )} />
-            <Route path='/BucketList' render={(prop) => (
-                <BucketList {...prop} Bucket={Bucket} />
-            )} />
-            <Route path='/AddStamp' component={AddStamp}/>
-            <Route path='/AddBucketList' component={AddBucketList}/>
+            <Route path='/BucketList' component={BucketList}/>
             <Route path='/Stamp/:id' render={(prop) => (
               <Stamp {...prop} Stamp_Dummy={Stamp_Dummy} />
             )} />
-            <Route path='/testing' component={FindPark} />
+            <Route path='/FindAPark' component={FindPark} />
           </Switch>
       </main>
     </body>

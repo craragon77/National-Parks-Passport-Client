@@ -85,12 +85,11 @@ export default class Dashboard extends Component{
                         <Link to={'/StampList'}>
                             View Your Stampbook
                         </Link><br/>
-                        <Link to={'/AddStamp'}>Add a new Stamp</Link><br/>
                         <h2>You have {this.state.bucketlist} National Parks on your Bucket List</h2>
                         <Link to={'/Bucketlist'}>
                             View Your BucketList
                         </Link><br/>
-                        <Link to={'/AddBucketList'}>Add to your Bucket List</Link><br/>
+                        <Link to={'/FindAPark'}>Find a park!</Link>
                     </main>
                 </body>
             </>

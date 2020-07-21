@@ -6,9 +6,12 @@ export default class SearchResult extends Component {
     render(){
         return(
             <>
-                <p>Park full name will go here</p>
-                <StampButton />
+            <div key={this.props.id}>
+                <p>{this.props.fullname}</p>
+                <StampButton fullname={this.props.fullname} id={this.props.id}/>
                 <BucketlistButton />
+            </div>
+                
             </>
             
         )
