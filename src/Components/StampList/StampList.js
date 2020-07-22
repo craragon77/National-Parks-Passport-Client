@@ -8,7 +8,7 @@ export default class StampList extends Component {
     constructor(props){
         super(props)
         this.state = {
-            stamps: ''
+            stamps: []
         }
     }
 
@@ -27,10 +27,29 @@ export default class StampList extends Component {
             })
             .catch(error => {console.log(error)})
     }
+    fetchPark = (id) => {
+        StampFetchService.getStampById(id)
+            .then(res => {
+                if (res.ok){
+                    //ok so the thing unexpectedly ends here?
+                    return res.json()
+                }
+            })
+            .then(resJson => {
+                 return console.log(resJson)
+            })
+            .catch((error) => {
+                 console.log(console.log(error))
+            })
+            
+    }
+    
+
     render() {
         console.log(this.state.stamps)
+
         const stampArray = this.state.stamps.map(i => {
-            return <Stamp />
+            this.fetchPark(i.park_id)
         })
         return(
             <>
@@ -41,9 +60,7 @@ export default class StampList extends Component {
                         {this.props.Stamp_Dummy.map((stamp) => {
                             return(
                             <li key={stamp.id}>
-                                <Link to={`/Stamp/${stamp.id}`}>
-                                    {stamp.fullname}
-                                </Link>
+                                <p>placeholder</p>
                             </li>)
                         })
                     }
