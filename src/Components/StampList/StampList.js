@@ -31,7 +31,7 @@ export default class StampList extends Component {
             .catch(error => {console.log(error)})
         
     }
-    /*fetchPark = (id) => {
+    fetchPark = (id) => {
         ParkFetchService.getParkById(id)
             .then(res => {
                 if (res.ok){
@@ -41,7 +41,7 @@ export default class StampList extends Component {
                 }
             })
             .then(resJson => {
-                console.log(resJson.fullname)
+                console.log(resJson)
                 //how can I take this mapped over resJson.fullname and make all the necessary list items or whatever?
             return <p>{resJson.fullname}</p>
             })
@@ -49,30 +49,15 @@ export default class StampList extends Component {
                 console.log(console.log(error))
             })
             
-    } */
+    }
     
 
     render() {
         console.log(this.state.stamps)
         const stampArray = this.state.stamps.map(i => {
-            //this.fetchPark(i.park_id)
-            ParkFetchService.getParkById(i.park_id)
-            .then(res => {
-                if (res.ok){
-                    //ok so i am getting a 401 unauthorized res here and idk why?
-                    return res.json()
-                }
-            })
-            .then(resJson => {
-                console.log(resJson.fullname)
-                //how can I take this mapped over resJson.fullname and make all the necessary list items or whatever?
-                return <p>{resJson.fullname}</p>
-            })
-            .catch((error) => {
-                 console.log(console.log(error))
-            })
-
+            this.fetchPark(i.park_id)
         })
+        console.log(stampArray)
         return(
             <>
                 <body>
