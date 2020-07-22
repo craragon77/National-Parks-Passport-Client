@@ -31,7 +31,7 @@ export default class StampList extends Component {
             .catch(error => {console.log(error)})
         
     }
-    fetchPark = (id) => {
+    /*fetchPark = (id) => {
         ParkFetchService.getParkById(id)
             .then(res => {
                 if (res.ok){
@@ -49,14 +49,14 @@ export default class StampList extends Component {
                 console.log(console.log(error))
             })
             
-    }
+    } */
     
 
     render() {
         console.log(this.state.stamps)
         const stampArray = this.state.stamps.map(i => {
-            this.fetchPark(i.park_id)
-            /*ParkFetchService.getParkById(i.park_id)
+            //this.fetchPark(i.park_id)
+            ParkFetchService.getParkById(i.park_id)
             .then(res => {
                 if (res.ok){
                     //ok so i am getting a 401 unauthorized res here and idk why?
@@ -70,7 +70,7 @@ export default class StampList extends Component {
             })
             .catch((error) => {
                  console.log(console.log(error))
-            }) */
+            })
 
         })
         return(
@@ -78,9 +78,7 @@ export default class StampList extends Component {
                 <body>
                     <h1 className='Your-Stamps-Title'>Your Stamps!</h1>
                     <main>
-                        <ul>
                         {stampArray}
-                        </ul>
                     </main>
                     <Link to='/addStamp'>Add a new stamp</Link><br/>
                     <Link to='/Dashboard'>Return to Dashboard</Link><br/>
