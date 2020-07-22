@@ -31,17 +31,14 @@ export default class Bucketlist extends Component {
             })
     }
     render(){
-        const b_item = data.map(i => {
-            return(
-                <Bucketlist_Item fullname = {i.fullname}/>
-            )
-        })
+        const bItem = this.state.bucketlist
+        console.log(bItem)
         return(
             <>
                 <body>
                     <h1 className="Bucketlist-Title">Your Bucket List</h1>
                     <main>
-                        {b_item}
+                        
                         <Link to={'/Dashboard'}>Back to dashboard</Link>
                     </main>
                 </body>

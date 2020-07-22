@@ -1,12 +1,37 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import Stamp from '../Stamp/Stamp';
-import './StampList.css'
+import './StampList.css';
+import StampFetchService from '../../Services/StampbookFetchService';
 
 export default class StampList extends Component {
-    
+    constructor(props){
+        super(props)
+        this.state = {
+            stamps: ''
+        }
+    }
+
+    componentDidMount(){
+        let id = window.localStorage.token_id
+        StampFetchService.fetchUserStamp(id)
+            .then(res => {
+                if(res.ok){
+                    return res.json()
+                }
+            })
+            .then(resJson => {
+                this.setState({
+                    stamps: resJson
+                })
+            })
+            .catch(error => {console.log(error)})
+    }
     render() {
-        console.log(this.props.Stamp)
+        console.log(this.state.stamps)
+        const stampArray = this.state.stamps.map(i => {
+            return <Stamp />
+        })
         return(
             <>
                 <body>

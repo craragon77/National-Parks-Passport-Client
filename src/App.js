@@ -15,7 +15,7 @@ import FindPark from '../src/Components/FindPark/FindPark';
 import TokenService from '../src/Services/TokenService';
 import Header from './Components/Header/Header'
 import PublicRoute from './Components/Routes/PublicRoute';
-import PrivateRoute from './Components/Routes/PublicRoute';
+import PrivateRoute from './Components/Routes/PrivateRoute';
 import './App.css';
 
 function App() {
