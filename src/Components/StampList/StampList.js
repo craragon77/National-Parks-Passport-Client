@@ -9,7 +9,8 @@ export default class StampList extends Component {
     constructor(props){
         super(props)
         this.state = {
-            stamps: []
+            stamps: [],
+            park_names: []
         }
     }
 
@@ -25,13 +26,16 @@ export default class StampList extends Component {
                 this.setState({
                     stamps: resJson
                 })
+                
             })
             .catch(error => {console.log(error)})
+        
     }
-    /*fetchPark = (id) => {
+    fetchPark = (id) => {
         ParkFetchService.getParkById(id)
             .then(res => {
                 if (res.ok){
+                    //console.log(res)
                     //ok so i am getting a 401 unauthorized res here and idk why?
                     return res.json()
                 }
@@ -39,20 +43,20 @@ export default class StampList extends Component {
             .then(resJson => {
                 console.log(resJson.fullname)
                 //how can I take this mapped over resJson.fullname and make all the necessary list items or whatever?
-                return <Stamp fullname={resJson.fullname}/>
+            return <p>{resJson.fullname}</p>
             })
             .catch((error) => {
-                 console.log(console.log(error))
+                console.log(console.log(error))
             })
             
-    } */
+    }
     
 
     render() {
         console.log(this.state.stamps)
         const stampArray = this.state.stamps.map(i => {
-            //this.fetchPark(i.park_id)
-            ParkFetchService.getParkById(i.park_id)
+            this.fetchPark(i.park_id)
+            /*ParkFetchService.getParkById(i.park_id)
             .then(res => {
                 if (res.ok){
                     //ok so i am getting a 401 unauthorized res here and idk why?
@@ -62,11 +66,12 @@ export default class StampList extends Component {
             .then(resJson => {
                 console.log(resJson.fullname)
                 //how can I take this mapped over resJson.fullname and make all the necessary list items or whatever?
-                return <Stamp fullname={resJson.fullname}/>
+                return <p>{resJson.fullname}</p>
             })
             .catch((error) => {
                  console.log(console.log(error))
-            })
+            }) */
+
         })
         return(
             <>
@@ -74,13 +79,7 @@ export default class StampList extends Component {
                     <h1 className='Your-Stamps-Title'>Your Stamps!</h1>
                     <main>
                         <ul>
-                        {this.props.Stamp_Dummy.map((stamp) => {
-                            return(
-                            <li key={stamp.id}>
-                                {stampArray}
-                            </li>)
-                        })
-                    }
+                        {stampArray}
                         </ul>
                     </main>
                     <Link to='/addStamp'>Add a new stamp</Link><br/>
