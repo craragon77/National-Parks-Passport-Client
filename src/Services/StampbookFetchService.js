@@ -60,7 +60,7 @@ const StampBookFetchService = {
         })
     },
     fetchStampInfo(stamp_id){
-        return fetch(`${config.API_ENDPOINT}/api/stambook/stampInfo/${stamp_id}`, {
+        return fetch(`${config.API_ENDPOINT}/api/stampbook/stampInfo/${stamp_id}`, {
             headers: {
                 'authorization': `${TokenService.getAuthToken()}`
             }

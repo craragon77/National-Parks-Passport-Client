@@ -12,7 +12,7 @@ export default class Stamp extends Component {
 
     componentDidMount(){
         //how can I get the stamp's id to use as a param?
-        let stampId = 
+        let stampId = window.location.pathname.split("/")[2]
         StampFetchService.fetchStampInfo(stampId)
             .then(res => {
                 if(res.ok){
@@ -22,18 +22,17 @@ export default class Stamp extends Component {
             .then(resJson => {
                 console.log(resJson)
                 this.setState({
-                    stamp: resJson
+                    stamp: resJson[0]
                 })
                 console.log(this.state.stamp)
             })
-            .catch(error => {console.log(error)})
-        
+            .catch(error => {console.log(error)})      
     }
     render(){
         return(
             <>
                 <body>
-                    <p>{}</p>
+                    <p>{this.state.stamp.fullname}</p>
                 </body>
                 <Link to='/StampList'>Return to Stamp List</Link>
             </>
