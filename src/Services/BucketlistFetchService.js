@@ -67,7 +67,7 @@ const BucketlistFetchService = {
         })
     },
     deleteBucketlistItem(id){
-        return fetch(`${config.API_ENDPOINT}/api/bucketlist/${id}`, {
+        return fetch(`${config.API_ENDPOINT}/api/bucketlist/id/${id}`, {
             method: 'DELETE',
             headers: {
                 'authorization': `${TokenService.getAuthToken()}`,

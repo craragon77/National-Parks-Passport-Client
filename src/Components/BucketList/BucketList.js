@@ -32,25 +32,26 @@ export default class Bucketlist extends Component {
             })
     }
 
-    handleDelete = (e) => {
-        let id = this.state.bucketlist[i].bucketlist_id
+    handleDelete = (id) => {
         BucketlistServices.deleteBucketlistItem(id)
         .then(res => {
             if(res.ok){
                 alert(`you have successfully deleted ${this.state.bucketlist.fullname} from your bucket list!`)
+                this.componentDidMount()
             }
         })
         .catch(error => {
             console.log(error)
         })
-                }
+    }
+
+
     render(){
         const bucketlistArray = this.state.bucketlist.map(i => {
-            
             return(
                 <li key={i.bucketlist_id}>
                     <p>{i.fullname}</p>
-                    <button onClick={this.handleDelete}>Remove from bucketlist</button>
+                    <button onClick={() =>this.handleDelete(i.bucketlist_id)}>Remove from bucketlist</button>
                 </li>
             )
         })
