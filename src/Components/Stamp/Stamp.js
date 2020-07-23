@@ -28,11 +28,35 @@ export default class Stamp extends Component {
             })
             .catch(error => {console.log(error)})      
     }
+
+    handleStampDelete = (e) => {
+        let stampId = window.location.pathname.split("/")[2]
+        StampFetchService.deleteStamp(stampId)
+            .then(res => {
+                if(res.ok){
+                    alert(`you have successfully deleted ${this.state.stamp.fullname} from your stampbook! You will be redirected back to the stampbook page!`)
+                }
+            })
+            .then(() => {
+                this.props.history.push('/Stampbook')
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
     render(){
         return(
             <>
                 <body>
-                    <p>{this.state.stamp.fullname}</p>
+                    <h1>{this.state.stamp.fullname}</h1>
+                    <img src={this.state.stamp.image} />
+                    <div>
+                        <p>Date Visited: {Date(this.state.stamp.stamp_date)}</p>
+                        <p>States: {this.state.stamp.states}</p>
+                        <p>Park Code: {this.state.stamp.parkcode}</p>
+                        <p>To learn more information, check out {this.state.stamp.fullname}'s page on the National Park Service's website <a target='_blank' href={`https://www.nps.gov/${this.state.stamp.parkcode}/index.htm`}>here</a>!</p>
+                    </div>
+                    <button onClick={this.handleStampDelete}>Delete Stamp from Passport</button>
                 </body>
                 <Link to='/StampList'>Return to Stamp List</Link>
             </>

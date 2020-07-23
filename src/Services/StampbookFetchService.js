@@ -65,6 +65,15 @@ const StampBookFetchService = {
                 'authorization': `${TokenService.getAuthToken()}`
             }
         })
+    },
+    deleteStamp(stamp_id){
+        return fetch(`${config.API_ENDPOINT}/api/stampbook/id/${stamp_id}`, {
+            method: 'DELETE',
+            headers: {
+                'authorization': `${TokenService.getAuthToken()}`,
+                'Content-Type': 'Application/JSON'
+            }
+        })
     }
 }
 

@@ -34,7 +34,7 @@ export default class Header extends Component{
                 <ul>
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/dashboard'>Dashboard</Link></li>
-                    <li><Link to='/StampList'>Stamps List</Link></li>
+                    <li><Link to='/Stampbook'>Stamps List</Link></li>
                     <li><Link to='/BucketList'>Bucket List</Link></li>
                     {TokenService.hasAuthToken() 
                     ?  this.renderLogOutLink()
