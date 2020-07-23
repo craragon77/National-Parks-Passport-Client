@@ -7,5 +7,5 @@ export default{
         username: 'Guest-1',
         password: 'Password-1'
     }, */
-    API_ENDPOINT: 'http://localhost:8000'
+    API_ENDPOINT: 'https://tranquil-wildwood-36569.herokuapp.com'
 }
