@@ -44,12 +44,22 @@ export default class Stamp extends Component {
                 console.log(error)
             })
     }
+
+    handleNullImage = () => {
+        if (this.state.stamp.image == null){
+            return <img src="park-service.jpg"/>
+        } else {
+            return <img src={this.state.stamp.image} />
+        }
+    }
+
+
     render(){
         return(
             <>
                 <body>
                     <h1>{this.state.stamp.fullname}</h1>
-                    <img src={this.state.stamp.image} />
+                    {this.handleNullImage()}
                     <div>
                         <p>Date Visited: {Date(this.state.stamp.stamp_date)}</p>
                         <p>States: {this.state.stamp.states}</p>

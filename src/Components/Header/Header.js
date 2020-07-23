@@ -33,9 +33,10 @@ export default class Header extends Component{
                 <header className="app-header">
                 <ul>
                     <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/dashboard'>Dashboard</Link></li>
-                    <li><Link to='/Stampbook'>Stamps List</Link></li>
-                    <li><Link to='/BucketList'>Bucket List</Link></li>
+                    <li><Link to='/Dashboard'>Dashboard</Link></li>
+                    <li><Link to='/Stampbook'>Your Stamps Book</Link></li>
+                    <li><Link to='/BucketList'>Your Bucket List</Link></li>
+                    <li><Link to='/FindAPark'>Find Parks</Link></li>
                     {TokenService.hasAuthToken() 
                     ?  this.renderLogOutLink()
                     : this.renderLoginLink()}

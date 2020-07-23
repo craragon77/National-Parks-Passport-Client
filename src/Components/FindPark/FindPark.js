@@ -67,7 +67,7 @@ export default class FindPark extends Component{
                 </form>
                 {parkResults}
                 {mappingTest}
-                {this.handleNoResultsFound}
+                {this.handleNoResultsFound()}
             </>
         )
     }

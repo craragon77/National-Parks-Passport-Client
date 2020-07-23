@@ -31,6 +31,15 @@ export default class StampList extends Component {
         
     }
 
+    handleNoStamps = () => {
+        if (this.state.stamps.length == 0){
+            return <div>
+                    <p>You currently have no stamps in your stamp book!<br/><Link to={'/FindAPark'}>Click here </Link> to get stamping!</p>
+                    
+                </div>
+        }
+    }
+
     /*fetchPark = (id) => {
         ParkFetchService.getParkById(id)
             .then(res => {
@@ -71,6 +80,7 @@ export default class StampList extends Component {
                     <main>
                         <ul>
                             {stampArray}
+                            {this.handleNoStamps()}
                         </ul>
                         
                     </main>
