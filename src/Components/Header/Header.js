@@ -5,6 +5,19 @@ import Signup from '../Signup/Signup';
 import { Link, withRouter } from 'react-router-dom';
 
 export default class Header extends Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            hasAuthToken: TokenService.hasAuthToken()
+        }
+    }
+    
+    componentDidMount(){
+        window.onstorage = () => {
+            this.setState({hasAuthToken: TokenService.hasAuthToken()});   
+        };
+    }
+    
     handleLogOutClick = () => {
         //some code will eventually go in here to remove the cookie or whatever form the client
         TokenService.clearAuthToken()
@@ -27,6 +40,7 @@ export default class Header extends Component{
             
         )
     }
+
     render(){
         return(
             <>
