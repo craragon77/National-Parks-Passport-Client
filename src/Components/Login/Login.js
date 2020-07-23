@@ -40,7 +40,7 @@ export default class Login extends Component {
                 console.log(res)
                 
                 return (!res.ok)
-                    ? res.json().then(e => Promise.reject(e))
+                    ? res.json().then(e => Promise.reject(e), alert('you username and password could not be found at this time'))
                     : res.json()
                 //i have been playing with both the upper and lower code blocks cause idk which is better lol
                 //if (!res.ok){

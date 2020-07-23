@@ -8,13 +8,14 @@ export default class Header extends Component{
     constructor(props){
         super(props)
         this.state = {
-            hasAuthToken: true
+            hasAuthToken: TokenService.hasAuthToken()
         }
+        console.log(this.state.hasAuthToken)
     }
     
     componentDidMount(){
         window.onstorage = () => {
-            this.setState({hasAuthToken:  false })
+            this.setState({hasAuthToken: TokenService.hasAuthToken()});   
         };
     }
     
@@ -51,7 +52,7 @@ export default class Header extends Component{
                     <li><Link to='/Stampbook'>Your Stamps Book</Link></li>
                     <li><Link to='/BucketList'>Your Bucket List</Link></li>
                     <li><Link to='/FindAPark'>Find Parks</Link></li>
-                    {TokenService.hasAuthToken() 
+                    {this.state.hasAuthToken 
                     ?  this.renderLogOutLink()
                     : this.renderLoginLink()}
                 </ul>
