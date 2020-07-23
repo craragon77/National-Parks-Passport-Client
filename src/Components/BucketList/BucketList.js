@@ -14,31 +14,37 @@ export default class Bucketlist extends Component {
 
     componentDidMount(){
         let id = window.localStorage.token_id
-        BucketlistServices.getBucketlistAndParkName(id)
-            .then(res => {
-                if (res.ok){
-                    return res.json()
-                }
-            })
-            .then(resJson => {
-                console.log(resJson)
-                this.setState({
-                    bucketlist: resJson
-                })
-                console.log(this.state.bucketlist)
-            })
-            .catch(err => {
-                console.log(err)
-            })
+        this.loadBucketlistIntoState(id)
     }
 
-    handleDelete = (id) => {
-        BucketlistServices.deleteBucketlistItem(id)
+    loadBucketlistIntoState = (id) => {
+        BucketlistServices.getBucketlistAndParkName(id)
+        .then(res => {
+            if (res.ok){
+                return res.json()
+            }
+        })
+        .then(resJson => {
+            this.setState({
+                bucketlist: resJson
+            })
+            console.log(this.state.bucketlist)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+
+    handleDelete = (bucketlist_id) => {
+        let user_id = window.localStorage.token_id
+        BucketlistServices.deleteBucketlistItem(bucketlist_id)
         .then(res => {
             if(res.ok){
                 alert(`you have successfully deleted ${this.state.bucketlist.fullname} from your bucket list!`)
-                this.componentDidMount()
             }
+        })
+        .then(() => {
+            this.loadBucketlistIntoState(user_id)
         })
         .catch(error => {
             console.log(error)

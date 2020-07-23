@@ -54,11 +54,11 @@ export default class Stamp extends Component {
                         <p>Date Visited: {Date(this.state.stamp.stamp_date)}</p>
                         <p>States: {this.state.stamp.states}</p>
                         <p>Park Code: {this.state.stamp.parkcode}</p>
-                        <p>To learn more information, check out {this.state.stamp.fullname}'s page on the National Park Service's website <a target='_blank' href={`https://www.nps.gov/${this.state.stamp.parkcode}/index.htm`}>here</a>!</p>
+                        <p>To learn more information, check out {this.state.stamp.fullname}'s page on the National Park Service's website <a target='_blank' SameSite='None' href={`https://www.nps.gov/${this.state.stamp.parkcode}/index.htm`}>here</a>!</p>
                     </div>
                     <button onClick={this.handleStampDelete}>Delete Stamp from Passport</button>
                 </body>
-                <Link to='/StampList'>Return to Stamp List</Link>
+                <Link to='/Stampbook'>Return to Stamp List</Link>
             </>
         )
     }

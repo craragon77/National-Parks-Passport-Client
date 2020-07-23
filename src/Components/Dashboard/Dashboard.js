@@ -82,7 +82,7 @@ export default class Dashboard extends Component{
                     </section>
                     <main className='Dashboard'>
                         <h2>You have {this.state.stamps} National Park Stamps</h2><br/>
-                        <Link to={'/StampList'}>
+                        <Link to={'/Stampbook'}>
                             View Your Stampbook
                         </Link><br/>
                         <h2>You have {this.state.bucketlist} National Parks on your Bucket List</h2>
