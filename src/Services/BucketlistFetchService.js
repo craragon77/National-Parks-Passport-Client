@@ -58,6 +58,22 @@ const BucketlistFetchService = {
                 'authorization': `${TokenService.getAuthToken()}`
             }
         })
+    },
+    getBucketlistAndParkName(id){
+        return fetch(`${config.API_ENDPOINT}/api/bucketlist/info/${id}`, {
+            headers: {
+                'authorization': `${TokenService.getAuthToken()}`
+            }
+        })
+    },
+    deleteBucketlistItem(id){
+        return fetch(`${config.API_ENDPOINT}/api/bucketlist/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'authorization': `${TokenService.getAuthToken()}`,
+                'content-type': 'application/json'
+            }
+        })
     }
 }
 
