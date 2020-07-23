@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import StampFetchService from '../../Services/StampbookFetchService';
 import NoPageFound from '../NoPageFound/NoPageFound';
+import park_service from '../../pics/park_service.jpg'
 
 export default class Stamp extends Component {
     constructor(props){
@@ -48,7 +49,7 @@ export default class Stamp extends Component {
 
     handleNullImage = () => {
         if (!this.state.stamp.image || this.state.stamp.image === 'null'){
-            return <img src="park-service.jpg" alt="National Parks Picture"/>
+            return <img src={park_service} alt="National Parks Picture"/>
         } else {
             return <img src={this.state.stamp.image} alt="National Parks Picture" />
         }
