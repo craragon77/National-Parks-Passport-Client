@@ -8,13 +8,13 @@ export default class Header extends Component{
     constructor(props){
         super(props)
         this.state = {
-            hasAuthToken: TokenService.hasAuthToken()
+            hasAuthToken: true
         }
     }
     
     componentDidMount(){
         window.onstorage = () => {
-            this.setState({hasAuthToken: TokenService.hasAuthToken()});   
+            this.setState({hasAuthToken:  false })
         };
     }
     
