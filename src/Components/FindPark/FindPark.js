@@ -31,12 +31,20 @@ export default class FindPark extends Component{
             //ok so we know this works and it shows succesfully
             //console.log(parks)
             this.setState({
-                parks: resJson
+                parks: resJson,
+                searched: true
             })
             //if you console.log the state, it shows you all the parks or whatever
             console.log(this.state.parks)
         })
         .catch(error => console.log(error))
+    }
+
+    handleNoResultsFound = () => {
+        if (this.state.searched == true && this.state.parks.length === 0){
+            return (<p>Unfortunatly no results were found based on your input.
+                 Try tweaking your search request and try again</p>)
+        }
     }
 
     render(){
@@ -45,10 +53,11 @@ export default class FindPark extends Component{
             return <SearchResult fullname = {i.fullname} id = {i.id}/>
         })
         //but this only shows the top of the ternary. If/else doesn't work
-        const parkResults = this.state.parks
-            ? <p>Nothing to show yet!</p>
+        const parkResults = this.state.searched
+            ? <p>Here are your results based on your search!</p>
             //why doesn't this show up how I expect it to?
-            : <p>wow so much to show!</p>
+            : <p>Nothing to show yet!</p>
+                
         return(
             <>
                 <form onSubmit={this.usingTheFetchService}>
@@ -58,6 +67,7 @@ export default class FindPark extends Component{
                 </form>
                 {parkResults}
                 {mappingTest}
+                {this.handleNoResultsFound}
             </>
         )
     }
