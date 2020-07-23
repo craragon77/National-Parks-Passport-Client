@@ -22,22 +22,11 @@ const StampBookFetchService = {
         })
     },
     getStampById(id){
-        fetch(`${config.API_ENDPOINT}/stampbook/${id}`, {
+        return fetch(`${config.API_ENDPOINT}/api/stampbook/id/${id}`, {
             headers: {
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `${TokenService.getAuthToken()}`,
                 //headers bb
             }
-        })
-        .then(res => {
-            if (res.ok){
-                return res.json()
-            }
-        })
-        .then(resJson => {
-            console.log(resJson)
-        })
-        .catch(() => {
-            console.log('ahhh the getStampById service is being all broken or whatever')
         })
     },
     postNewStamp(userId, parkId, stampDate, comments){
@@ -62,6 +51,20 @@ const StampBookFetchService = {
             }
         })
             
+    },
+    fetchStampAndNames(id){
+        return fetch(`${config.API_ENDPOINT}/api/stampbook/stampList/${id}`,{
+            headers: {
+                'authorization': `${TokenService.getAuthToken()}`
+            }
+        })
+    },
+    fetchStampInfo(stamp_id){
+        return fetch(`${config.API_ENDPOINT}/api/stambook/stampInfo/${stamp_id}`, {
+            headers: {
+                'authorization': `${TokenService.getAuthToken()}`
+            }
+        })
     }
 }
 

@@ -9,29 +9,29 @@ export default class StampList extends Component {
     constructor(props){
         super(props)
         this.state = {
-            stamps: [],
-            park_names: []
+            stamps: []
         }
     }
 
     componentDidMount(){
         let id = window.localStorage.token_id
-        StampFetchService.fetchUserStamp(id)
+        StampFetchService.fetchStampAndNames(id)
             .then(res => {
                 if(res.ok){
                     return res.json()
                 }
             })
             .then(resJson => {
+                console.log(resJson)
                 this.setState({
                     stamps: resJson
                 })
-                
             })
             .catch(error => {console.log(error)})
         
     }
-    fetchPark = (id) => {
+
+    /*fetchPark = (id) => {
         ParkFetchService.getParkById(id)
             .then(res => {
                 if (res.ok){
@@ -43,27 +43,36 @@ export default class StampList extends Component {
             .then(resJson => {
                 console.log(resJson)
                 //how can I take this mapped over resJson.fullname and make all the necessary list items or whatever?
-            return <p>{resJson.fullname}</p>
+                let storedValue = {resJson}
+                console.log(storedValue)
             })
             .catch((error) => {
                 console.log(console.log(error))
             })
             
-    }
+    } */
     
 
     render() {
         console.log(this.state.stamps)
         const stampArray = this.state.stamps.map(i => {
-            this.fetchPark(i.park_id)
+            return(
+            <li key={i.stamp_id}>
+                <Link to={`/Stamp/${i.stamp_id}`}>
+                    <p>{i.fullname}</p>
+                </Link>
+            </li>
+            )
         })
-        console.log(stampArray)
         return(
             <>
                 <body>
                     <h1 className='Your-Stamps-Title'>Your Stamps!</h1>
                     <main>
-                        {stampArray}
+                        <ul>
+                            {stampArray}
+                        </ul>
+                        
                     </main>
                     <Link to='/addStamp'>Add a new stamp</Link><br/>
                     <Link to='/Dashboard'>Return to Dashboard</Link><br/>

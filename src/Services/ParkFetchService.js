@@ -29,26 +29,13 @@ const ParkFetchService = {
                 }
             })
     },
-    getParkById(){
+    getParkById(id){
         return(
-            fetch(`${config.API_ENDPOINT}/api/parks/id/:id`, {
-                header: {
-                    'authorization': `basic ${TokenService.getAuthToken()}`,
+            fetch(`${config.API_ENDPOINT}/api/parks/id/${id}`, {
+                headers: {
+                    'authorization': `${TokenService.getAuthToken()}`,
                     //more code will go in here eventually
                 }
-            })
-            .then(res => {
-                if (res.ok){
-                    return(
-                        res.json()
-                    )
-                }
-            })
-            .then(resJson => {
-                console.log(resJson)
-            })
-            .catch(() => {
-                console.log('there was an error in the GetParkById endpoint!')
             })
         )
     }
