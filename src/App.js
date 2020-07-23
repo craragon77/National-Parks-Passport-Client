@@ -17,6 +17,7 @@ import Header from './Components/Header/Header'
 import PublicRoute from './Components/Routes/PublicRoute';
 import PrivateRoute from './Components/Routes/PrivateRoute';
 import './App.css';
+import NoPageFound from './Components/NoPageFound/NoPageFound';
 
 function App() {
   console.log(STAMP)
@@ -39,12 +40,12 @@ function App() {
             <Route exact path='/' component={LandingPage}/>
             <PublicRoute path='/Signup' component={Signup} />
             <PublicRoute path='/Login' component={Login} />
-            {/*idk why but the Private route makes a weird error I can't figure out*/}
             <PrivateRoute path='/Dashboard' component={Dashboard} />
             <PrivateRoute path='/Stampbook' component={StampList}/>
             <PrivateRoute path='/BucketList' component={BucketList}/>
-            <PrivateRoute path='/Stamp/:id' render={Stamp} />
+            <PrivateRoute path='/Stamp/:id' component={Stamp} />
             <PrivateRoute path='/FindAPark' component={FindPark} />
+            <Route component={NoPageFound} />
           </Switch>
       </main>
     </body>

@@ -6,7 +6,7 @@ const ParkFetchService = {
         return (
             fetch(`${config.API_ENDPOINT}/api/parks`, {
                 headers: {
-                    'authorization': `basic ${TokenService.getAuthToken()}`,
+                    'authorization': `${TokenService.getAuthToken()}`,
                     //something goes in here
                 }
             })
