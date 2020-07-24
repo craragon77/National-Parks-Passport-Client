@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ParkFetchService from '../../Services/ParkFetchService';
 import SearchResult from '../SearchResult/SearchResult';
+import './FindPark.css';
 
 export default class FindPark extends Component{
     constructor(props){
@@ -56,15 +57,16 @@ export default class FindPark extends Component{
         const parkResults = this.state.searched
     ? <p>Here are your results based on your search!<br/>You have {this.state.parks.length} parks that match your search</p>
             //why doesn't this show up how I expect it to?
-            : <p>Nothing to show yet!</p>
+            : null
                 
         return(
             <>
                 <form onSubmit={this.usingTheFetchService}>
-                    <label for="park_search">Enter the name of any park, monument, or historic site in the United States</label>
-                    <input type="text" name="fullname" value={this.state.fullname} onChange={this.dealWithFullName} required></input>
-                    <button>Submit!</button>
+                    <label id="label" htmlfor="park_search">Enter the name of any park, monument, or historic site in the United States</label>
+                    <input type="text" name="fullname" value={this.state.fullname} onChange={this.dealWithFullName} required /><br/>
+                    <button id="search-parks">Submit!</button>
                 </form>
+                <hr/>
                 {parkResults}
                 {mappingTest}
                 {this.handleNoResultsFound()}

@@ -3,8 +3,8 @@ import TokenService from '../../Services/TokenService';
 import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
 import { Link, withRouter } from 'react-router-dom';
-//import './Header.css';
-//import '../Buttons/Hamburger.scss';
+import './Header.css';
+import '../Buttons/Hamburger.scss';
 
 export default class Header extends Component{
     constructor(props){
@@ -41,7 +41,7 @@ export default class Header extends Component{
         console.log('login has executed')
         return(
             <>
-                <li id="login-nav"><Link to={'/Login'}>Login</Link></li>
+                <li id="login-nav"><Link to={'/Login'}>Login</Link></li><br/>
                 <li id="signup-nav"><Link to={'/Signup'}>Signup</Link></li>
             </>
             

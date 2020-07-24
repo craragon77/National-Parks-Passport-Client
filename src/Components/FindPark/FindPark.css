@@ -1,0 +1,24 @@
+form{
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+#label{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+input{
+    margin-top: 10px;
+    border-radius: 5%;
+    border: 1px solid black;
+    height: 20px;
+}
+#search-parks{
+    margin: 10px;
+    border-radius: 5px;
+    height: 20px;
+    background-color: gold;
+    border: 1px solid black;
+    font-weight: bold;
+}

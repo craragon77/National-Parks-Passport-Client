@@ -9,6 +9,9 @@ export default class LandingPage extends Component {
             <>
                 <body>
                     <main>
+                        <div>
+                            <h3 id='getting-stated'><Link to={'/Dashboard'}>Lets Get Started</Link></h3>
+                        </div>
                         <section className="info-section">
                             <h2>The National Parks Passport</h2>
                             <p>
@@ -28,11 +31,6 @@ export default class LandingPage extends Component {
                                 serve as a guide to the wonders that our National Parks have to offer!
                             </p>
                         </section><br />
-                        <section className="signup-section">
-                            <h2>Make an account and get stampin'!</h2>
-                            <Link to={'/Signup'}>Make an account!</Link><br/>
-                            <Link to={'/Login'}>Login to my account!</Link>
-                        </section><br/>
                     </main>
                 </body>
             </>

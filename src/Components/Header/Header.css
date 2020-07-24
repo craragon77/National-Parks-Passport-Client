@@ -1,11 +1,20 @@
-.header-bar{
+.header-bar {
     height: 100vh;
     width: 250px;
-    background-color: rgb(10, 10, 116);
+    background-color: rgb(0, 0, 160);
     position: absolute;
     top: 0;
     left: 0;
     transform: translateX(-250px);
+}
+
+li{
+    text-align: left;
+    line-height: 50pt;
+}
+
+a{
+    color: gold
 }
 
 .header-bar--active {
@@ -18,9 +27,8 @@
 }
 
 .header-bar__item {
-    margin-bottom: 20px;
+   margin-bottom: 20px;
 }
-
 
 
 
