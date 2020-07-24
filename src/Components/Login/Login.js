@@ -62,7 +62,7 @@ export default class Login extends Component {
                 //i'm told that a loginsuccess() prop is necessary here but idk what that even means
             })
             .then(() => {
-                this.props.history.push('/dashboard')
+                window.location.href = '/dashboard'
             })
             .catch(res => {
                 console.dir(res)
