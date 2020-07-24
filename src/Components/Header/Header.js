@@ -23,6 +23,9 @@ export default class Header extends Component{
     handleLogOutClick = () => {
         //some code will eventually go in here to remove the cookie or whatever form the client
         TokenService.clearAuthToken()
+        this.setState({
+            hasAuthToken: TokenService.hasAuthToken()
+        })
         //you should have a push or something so that you can go back to the home page when its clicked
         //this.props.history.push('/')
     }
