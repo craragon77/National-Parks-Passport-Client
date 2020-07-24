@@ -5,7 +5,7 @@ const UserFetchService = {
     getAllUsers(){
         fetch(`${config.API_ENDPOINT}/api/users`, {
             headers: {
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `${TokenService.getAuthToken()}`,
                 //headers will go in here
             }
         })

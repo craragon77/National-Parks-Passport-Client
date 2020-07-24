@@ -15,6 +15,7 @@ export default class Header extends Component{
     
     componentDidMount(){
         window.onstorage = () => {
+            console.log("Storage changed!");
             this.setState({hasAuthToken: TokenService.hasAuthToken()});   
         };
     }
@@ -43,6 +44,7 @@ export default class Header extends Component{
     }
 
     render(){
+        console.log("Storage changed!");
         return(
             <>
                 <header className="app-header">
