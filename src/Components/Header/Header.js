@@ -3,6 +3,8 @@ import TokenService from '../../Services/TokenService';
 import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
 import { Link, withRouter } from 'react-router-dom';
+//import './Header.css';
+//import '../Buttons/Hamburger.scss';
 
 export default class Header extends Component{
     constructor(props){
@@ -50,18 +52,18 @@ export default class Header extends Component{
         console.log("Storage changed!");
         return(
             <>
-                <header className="app-header">
-                <ul>
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/Dashboard'>Dashboard</Link></li>
-                    <li><Link to='/Stampbook'>Your Stamps Book</Link></li>
-                    <li><Link to='/BucketList'>Your Bucket List</Link></li>
-                    <li><Link to='/FindAPark'>Find Parks</Link></li>
-                    {this.state.hasAuthToken 
-                    ?  this.renderLogOutLink()
-                    : this.renderLoginLink()}
-                </ul>
-                </header>
+                <div className="header-bar">
+                    <ul>
+                        <li><Link to='/'>Home</Link></li>
+                        <li><Link to='/Dashboard'>Dashboard</Link></li>
+                        <li><Link to='/Stampbook'>Your Stamps Book</Link></li>
+                        <li><Link to='/BucketList'>Your Bucket List</Link></li>
+                        <li><Link to='/FindAPark'>Find Parks</Link></li>
+                        {this.state.hasAuthToken 
+                        ?  this.renderLogOutLink()
+                        : this.renderLoginLink()}
+                    </ul>
+                </div>
             </>
         )
     }

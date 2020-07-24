@@ -1,0 +1,29 @@
+.header-bar{
+    height: 100vh;
+    width: 250px;
+    background-color: rgb(10, 10, 116);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-250px);
+}
+
+.header-bar--active {
+    transform: translateX(0px);
+}
+
+.header-bar__list {
+    margin-top: 50px;
+    list-style: none;
+}
+
+.header-bar__item {
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+ 

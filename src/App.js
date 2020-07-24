@@ -16,8 +16,9 @@ import TokenService from '../src/Services/TokenService';
 import Header from './Components/Header/Header'
 import PublicRoute from './Components/Routes/PublicRoute';
 import PrivateRoute from './Components/Routes/PrivateRoute';
-import './App.css';
+import './App.scss';
 import NoPageFound from './Components/NoPageFound/NoPageFound';
+import Hamburger from './Components/Buttons/Hamburger';
 
 function App() {
   console.log(STAMP)
@@ -27,11 +28,12 @@ function App() {
   return (
     <>
     <header className="app-header">
-    <section className="title-section">
-      <h1>National Parks Discover-E-Pass</h1>
-      <h3>A Paperless Passport to America's National Parks and Monuments</h3>
-    </section><br/>
+      <Hamburger />
       <Header />
+    <section className="title-section">
+      <h1>National Parks <br/> Discover-E-Pass</h1>
+      <h3>A Paperless Passport to America's National Parks and Monuments</h3>
+    </section>
     </header>
     <body>
         <main>

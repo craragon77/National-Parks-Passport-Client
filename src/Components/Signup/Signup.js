@@ -83,7 +83,7 @@ export default class Signup extends Component {
                         <label for="username">Username</label><br/>
                         <input type="text" id="username-input" name="username" value={this.state.username} onChange={this.handleUsername}/><br/>
                         
-                        <label for="password">Password (be sure to include at least one upper and lower case letter, as well as a number and symbol)</label><br/>
+                        <label for="password">Password <br/>(be sure to include at least one upper and lower case letter, as well as a number and symbol)</label><br/>
                         <input type="password" id="password-input" name="password" value={this.state.password} onChange={this.handlePassword}/><br/> 
                         <label for="password-take2">Please Re-Enter Password</label><br/>
                         <input type="password" for="password-take-2" id="password-take-2" name="password2" value={this.state.password2} onChange={this.handleRepeatPassword} required/><br/>

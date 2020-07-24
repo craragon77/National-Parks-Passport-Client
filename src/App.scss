@@ -1,0 +1,130 @@
+body{
+    background-color: rgb(56, 56, 56);
+    color: white;
+    margin-top: 0px;
+}
+
+body, .app-header, .app-footer{
+    padding: 20px;
+}
+
+.app-header > ul > li{
+    padding: 10px;
+    list-style: none;
+    display: inline;
+}
+ul{
+    padding: 20px;
+}
+a{
+    color: yellow;
+}
+ul, footer{
+    border: 2px solid white;
+}
+#signup-nav, #login-nav{
+    display: inline;
+    flex-direction: column-reverse;
+}
+//start of the box decoration!
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.hamburger {
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+}
+
+.hamburger, .header-bar {
+  transition: transform .3s .1s ease-in-out;
+}
+
+.hamburger--active {
+  transform: translatex(250px);
+}
+
+.hamburger__box {
+  width: 35px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+@mixin hamburger-line {
+  width: 100%;
+  height: 3px;
+  background-color: red;
+  position: absolute;
+}
+
+.hamburger__inner {
+  @include hamburger-line;
+  
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color .1s .2s ease-in-out;
+}
+
+.hamburger__inner::before,
+.hamburger__inner::after {
+  @include hamburger-line;
+  
+  content: '';
+  left: 0;
+  transition: transform .2s .2s ease-in-out;
+} 
+
+.hamburger__inner::before {
+  top: -10px;
+}
+
+.hamburger__inner::after {
+  top: 10px;
+}
+
+.hamburger--active .hamburger__inner {
+  background-color: transparent;
+}
+
+.hamburger--active .hamburger__inner:before {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger--active .hamburger__inner:after {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+.header-bar {
+  height: 100vh;
+  width: 250px;
+  background-color: blue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-250px);
+}
+
+.header-bar--active {
+  transform: translateX(0px);
+}
+
+.header-bar__list {
+  margin-top: 50px;
+  list-style: none;
+}
+
+.header-bar__item {
+  margin-bottom: 20px;
+  
+  a {
+    text-decoration: none;
+    color: green;
+  }
+}
