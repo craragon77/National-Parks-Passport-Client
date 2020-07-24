@@ -76,9 +76,9 @@ export default class Login extends Component {
                 <h1 className="login-title">Login</h1>
                 <form className="login-form" onSubmit={this.handleSubmitJwtAuth}>
                     <label for="username">Username</label><br/>
-                    <input type="text" id="username-input" name="username" value={this.state.username} onChange={this.handleUsername} required/><br/>
+                    <input type="password" id="username-input" name="username" value={this.state.username} onChange={this.handleUsername} required/><br/>
                     <label for="password">Password</label><br/>
-                    <input type="text" id="password-input" name="password" value={this.state.password} onChange={this.handlePassword} required/><br/>
+                    <input type="password" id="password-input" name="password" value={this.state.password} onChange={this.handlePassword} required/><br/>
                     <button>Submit!</button>
                 </form>
             </body>
