@@ -48,7 +48,7 @@ export default class Signup extends Component {
             return alert('your two passwords do not match. Please ensure that they are identical')
         } else {
             UserFetchService.postNewUser(username, password)
-            //ok so this 'res' is undefined but its posting
+            //the error is not showing up
             .then(res => {
                 //there is an error here (even though its posting)
                 console.log(res)
@@ -67,9 +67,9 @@ export default class Signup extends Component {
                 alert(`Horray! You have successfully made an account! You will not be redirected to the login page to access your account!`)
                 this.props.history.push('/login')
             })
-            .catch(() => {
+            .catch((error) => {
                 //think about the UX for this!
-                console.log(`aaaaaahhhhhh there was an error!`)
+                console.log(alert(Object.values(error)))
             })
         }
     }
@@ -83,7 +83,7 @@ export default class Signup extends Component {
                         <label for="username">Username</label><br/>
                         <input type="text" id="username-input" name="username" value={this.state.username} onChange={this.handleUsername}/><br/>
                         
-                        <label for="password">Password</label><br/>
+                        <label for="password">Password (be sure to include at least one upper and lower case letter, as well as a number and symbol)</label><br/>
                         <input type="password" id="password-input" name="password" value={this.state.password} onChange={this.handlePassword}/><br/> 
                         <label for="password-take2">Please Re-Enter Password</label><br/>
                         <input type="password" for="password-take-2" id="password-take-2" name="password2" value={this.state.password2} onChange={this.handleRepeatPassword} required/><br/>
