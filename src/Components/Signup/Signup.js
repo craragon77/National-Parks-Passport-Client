@@ -64,7 +64,7 @@ export default class Signup extends Component {
                 })
             })
             .then(() => {
-                alert(`Horray! You have successfully made an account! You will not be redirected to the login page to access your account!`)
+                alert(`Horray! You have successfully made an account! You will now be redirected to the login page to access your account!`)
                 this.props.history.push('/login')
             })
             .catch((error) => {

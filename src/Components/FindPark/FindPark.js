@@ -54,7 +54,7 @@ export default class FindPark extends Component{
         })
         //but this only shows the top of the ternary. If/else doesn't work
         const parkResults = this.state.searched
-            ? <p>Here are your results based on your search!</p>
+    ? <p>Here are your results based on your search!<br/>You have {this.state.parks.length} parks that match your search</p>
             //why doesn't this show up how I expect it to?
             : <p>Nothing to show yet!</p>
                 
