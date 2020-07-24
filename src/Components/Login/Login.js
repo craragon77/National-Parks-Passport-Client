@@ -40,6 +40,7 @@ export default class Login extends Component {
                 console.log(res)
                 
                 return (!res.ok)
+                //ok i think that its the ternary that's slowing it down
                     ? res.json().then(e => Promise.reject(e), alert('you username and password could not be found at this time'))
                     : res.json()
                 //i have been playing with both the upper and lower code blocks cause idk which is better lol
@@ -76,7 +77,7 @@ export default class Login extends Component {
                 <h1 className="login-title">Login</h1>
                 <form className="login-form" onSubmit={this.handleSubmitJwtAuth}>
                     <label for="username">Username</label><br/>
-                    <input type="password" id="username-input" name="username" value={this.state.username} onChange={this.handleUsername} required/><br/>
+                    <input type="text" id="username-input" name="username" value={this.state.username} onChange={this.handleUsername} required/><br/>
                     <label for="password">Password</label><br/>
                     <input type="password" id="password-input" name="password" value={this.state.password} onChange={this.handlePassword} required/><br/>
                     <button>Submit!</button>
