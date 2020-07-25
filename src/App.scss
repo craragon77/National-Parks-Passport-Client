@@ -25,10 +25,11 @@ footer{
     flex-direction: column-reverse;
 }
 
-.title-image{
-    background-image: url('./pics/golden-gate-bridge.jpg');
-    background-size: 350px 200px;
+.app-header{
+    background-image: url('./pics/mount-rushmore-dark.jpg');
+    background-size: 450px 300px;
     background-repeat: none;
     background-position: center;
+    padding-bottom: 30px;
 }
 

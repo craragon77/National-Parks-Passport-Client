@@ -13,3 +13,7 @@ section{
 h2{
     text-align: left;
 }
+
+section > p{
+    line-height: 24px;
+}
