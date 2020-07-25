@@ -1,8 +1,19 @@
-li{
+#stamps{
     list-style: none;
-    text-align: center;
+    text-align: left;
+    border: darkgray solid 2px;
+    line-height: normal;
+    border-radius: 5%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    font-size: 15px;
 }
 
 .Your-Stamps-Title{
     text-align: center;
+}
+
+main{
+    margin: 0px;
 }
