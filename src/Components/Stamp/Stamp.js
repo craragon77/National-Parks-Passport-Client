@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import StampFetchService from '../../Services/StampbookFetchService';
 import NoPageFound from '../NoPageFound/NoPageFound';
-import park_service from '../../pics/park_service.jpg'
+import park_service from '../../pics/park_service.jpg';
+import './Stamp.css'
 
 export default class Stamp extends Component {
     constructor(props){
