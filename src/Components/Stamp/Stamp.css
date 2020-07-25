@@ -1,0 +1,30 @@
+#stamp-photo{
+    max-width: 200px;
+    max-height: 200px;
+
+}
+
+#stamp-body > h1{
+    font-size: 20px;
+}
+#stamp-body > div, #stamp-body > a {
+    text-align: left;
+}
+
+#stamp-photo, #stamp-body > h1{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#delete-button{
+    background-color: rgb(153, 8, 8);
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    float: right;
+    height: 30px;
+    width: 100px;
+}

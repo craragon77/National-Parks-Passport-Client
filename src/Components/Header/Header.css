@@ -22,6 +22,10 @@ a{
     color: gold
 }
 
+a:hover{
+    color: navy
+}
+
 .header-bar--active {
     transform: translateX(0px);
 }

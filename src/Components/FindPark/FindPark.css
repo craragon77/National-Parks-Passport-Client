@@ -10,7 +10,7 @@ form{
 }
 input{
     margin-top: 10px;
-    border-radius: 5%;
+    border-radius: 5px;
     border: 1px solid black;
     height: 20px;
 }

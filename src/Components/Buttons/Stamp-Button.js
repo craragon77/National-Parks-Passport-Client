@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import StampbookFetchService from '../../Services/StampbookFetchService';
+import './Stamp-Button.css'
 
 
 export default class StampButton extends Component {
@@ -20,7 +21,7 @@ export default class StampButton extends Component {
     }
     render(){
         return(
-            <button onClick={this.addStamp}>Add to Stampbook</button>
+            <button id="stamp-button" onClick={this.addStamp}>Add to Stampbook</button>
         )
     }
 }

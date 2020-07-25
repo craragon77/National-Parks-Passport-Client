@@ -55,20 +55,21 @@ export default class FindPark extends Component{
         })
         //but this only shows the top of the ternary. If/else doesn't work
         const parkResults = this.state.searched
-    ? <p>Here are your results based on your search!<br/>You have {this.state.parks.length} parks that match your search</p>
+    ? <p>{this.state.parks.length} park(s) were found matching your search</p>
             //why doesn't this show up how I expect it to?
             : null
                 
         return(
             <>
                 <form onSubmit={this.usingTheFetchService}>
-                    <label id="label" htmlfor="park_search">Enter the name of any park, monument, or historic site in the United States</label>
+                    <label id="label" htmlFor="park_search">Enter the name of any park, monument, or historic site in the United States</label>
                     <input type="text" name="fullname" value={this.state.fullname} onChange={this.dealWithFullName} required /><br/>
                     <button id="search-parks">Submit!</button>
                 </form>
                 <hr/>
-                {parkResults}
-                {mappingTest}
+                    {parkResults}
+                    {mappingTest}
+                
                 {this.handleNoResultsFound()}
             </>
         )

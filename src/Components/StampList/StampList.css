@@ -1,6 +1,6 @@
 #stamps{
     list-style: none;
-    text-align: left;
+    text-align: center;
     border: darkgray solid 2px;
     line-height: normal;
     border-radius: 5%;
@@ -16,4 +16,8 @@
 
 main{
     margin: 0px;
+}
+
+#bottom-links > a {
+    margin: 10px;
 }

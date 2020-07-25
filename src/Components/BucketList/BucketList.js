@@ -55,21 +55,21 @@ export default class Bucketlist extends Component {
     render(){
         const bucketlistArray = this.state.bucketlist.map(i => {
             return(
-                <li key={i.bucketlist_id}>
+                <li id="bucket" key={i.bucketlist_id}>
                     <p>{i.fullname}</p>
-                    <button onClick={() =>this.handleDelete(i.bucketlist_id)}>Remove from bucketlist</button>
+                    <button onClick={() =>this.handleDelete(i.bucketlist_id)}>Remove from Bucket List</button>
                 </li>
             )
         })
         return(
             <>
-                <body>
+                <div className = "BucketList">
                     <h1 className="Bucketlist-Title">Your Bucket List</h1>
                     <main>
                         {bucketlistArray}
                         <Link to={'/Dashboard'}>Back to dashboard</Link>
                     </main>
-                </body>
+                </div>
             </>
         )
     }

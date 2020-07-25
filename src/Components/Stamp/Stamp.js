@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import StampFetchService from '../../Services/StampbookFetchService';
 import NoPageFound from '../NoPageFound/NoPageFound';
 import park_service from '../../pics/park_service.jpg'
+import "./Stamp.css";
 
 export default class Stamp extends Component {
     constructor(props){
@@ -49,9 +50,9 @@ export default class Stamp extends Component {
 
     handleNullImage = () => {
         if (!this.state.stamp.image || this.state.stamp.image === 'null'){
-            return <img src={park_service} alt="National Parks Picture"/>
+            return <img id="stamp-photo" src={park_service} alt="National Parks Picture"/>
         } else {
-            return <img src={this.state.stamp.image} alt="National Parks Picture" />
+            return <img id="stamp-photo" src={this.state.stamp.image} alt="National Parks Picture" />
         }
     }
 
@@ -60,18 +61,18 @@ export default class Stamp extends Component {
             return <NoPageFound />
         } else {
             return (
-            <body>
+            <main id="stamp-body">
                 <h1>{this.state.stamp.fullname}</h1>
                 {this.handleNullImage()}
                 <div>
                     <p>Date Visited: {Date(this.state.stamp.stamp_date)}</p>
                     <p>States: {this.state.stamp.states}</p>
                     <p>Park Code: {this.state.stamp.parkcode}</p>
-                    <p>To learn more information, check out {this.state.stamp.fullname}'s page on the National Park Service's website <a target='_blank' SameSite='None' href={`https://www.nps.gov/${this.state.stamp.parkcode}/index.htm`}>here</a>!</p>
+                    <p>To learn more information, check out {this.state.stamp.fullname}'s page on the National Park Service's website <a target='_blank' samesite='None' href={`https://www.nps.gov/${this.state.stamp.parkcode}/index.htm`}>here</a>!</p>
                 </div>
-                <button onClick={this.handleStampDelete}>Delete Stamp from Passport</button>
+                <button id='delete-button' onClick={this.handleStampDelete}>Delete Stamp from Passport</button><br/>
                 <Link to='/Stampbook'>Return to Stamp List</Link>
-            </body>
+            </main>
                 
             )
         }
