@@ -1,0 +1,10 @@
+.lost-user-photo{
+    background-image: url('../../pics/404-lost-1.jpg');
+    height: 300px;
+    width: 200px;
+    background-position: center;
+    background-size: 450px 300px;
+    background-repeat: none;
+    margin-right: auto;
+    margin-left: auto;
+}
