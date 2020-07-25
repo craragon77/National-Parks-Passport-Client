@@ -4,7 +4,7 @@ body{
     margin-top: 0px;
 }
 
-body, .app-header, .app-footer{
+body, .app-footer{
     padding: 20px;
 }
 
@@ -24,3 +24,11 @@ footer{
     display: inline;
     flex-direction: column-reverse;
 }
+
+.title-image{
+    background-image: url('./pics/golden-gate-bridge.jpg');
+    background-size: 350px 200px;
+    background-repeat: none;
+    background-position: center;
+}
+

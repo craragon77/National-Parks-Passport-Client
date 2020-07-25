@@ -74,24 +74,25 @@ export default class Dashboard extends Component{
     render(){
         return(
             <>
-                <body>
-                    <section>
-                        <div>
-                            <h1 className="welcome-title">Welcome {this.state.username}</h1>
-                        </div>
-                    </section>
-                    <main className='Dashboard'>
-                        <h2>You have {this.state.stamps} National Park Stamps</h2><br/>
-                        <Link to={'/Stampbook'}>
-                            View Your Stampbook
-                        </Link><br/>
-                        <h2>You have {this.state.bucketlist} National Parks on your Bucket List</h2>
-                        <Link to={'/Bucketlist'}>
-                            View Your BucketList
-                        </Link><br/>
+            <main>
+                <section>
+                    <div>
+                        <h1 className="welcome-title">Welcome {this.state.username}</h1>
                         <Link to={'/FindAPark'}>Find a park!</Link>
-                    </main>
-                </body>
+                    </div>
+                </section>
+                <div className='Dashboard'>
+                    <h2>You have {this.state.stamps} National Park Stamps</h2><br/>
+                    <Link to={'/Stampbook'}>
+                        View Your Stampbook
+                    </Link><br/>
+                    <h2>You have {this.state.bucketlist} National Parks on your Bucket List</h2>
+                    <Link to={'/Bucketlist'}>
+                        View Your BucketList
+                    </Link><br/>
+                </div>
+            </main>
+                
             </>
         )
     }

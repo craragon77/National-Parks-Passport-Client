@@ -7,21 +7,23 @@ export default class LandingPage extends Component {
     render(){
         return (
             <>
-                <body>
                     <main>
                         <div>
                             <h3 id='getting-stated'><Link to={'/Dashboard'}>Lets Get Started</Link></h3>
                         </div>
+                        <hr/>
                         <section className="info-section">
+                            
                             <h2>The National Parks Passport</h2>
                             <p>
                                 In 1872, the Grant administration established Yellowstone National Park in modern day Montana and Wyoming 
-                                "as a public park or pleasuring-ground for the benefit and enjoyment of the people". Almost 150 years later, 
+                                "as a public park or pleasuring-ground for the benefit and enjoyment of the people". <br/> Almost 150 years later, 
                                 the United States has established over 400+ sites of cultural, historic, military, and environmental importance 
                                 which make up the National Park System. Individual, free-of-change stamps are available in every National Park's ranger station 
                                 to record the park name and date of attendence, and Passport to Your National Parks Program began in 1986 as a means to 
                                 collect stamps and educate the public of our nations many National Parks
                             </p>
+                            <hr/>
                         </section><br/>
                         <section className="how-to-section">
                             <h2>How Does This Work?</h2>
@@ -32,7 +34,6 @@ export default class LandingPage extends Component {
                             </p>
                         </section><br />
                     </main>
-                </body>
             </>
         )
     }

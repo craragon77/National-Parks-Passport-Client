@@ -5,6 +5,7 @@ import config from '../../config';
 import TokenService from '../../Services/TokenService';
 import UserFetchService from '../../Services/UserFetchService';
 import AuthApiService from '../../Services/auth-api-service';
+import './Login.css';
 
 export default class Login extends Component {
     constructor(props){

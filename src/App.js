@@ -31,11 +31,13 @@ function App() {
       <Hamburger />
       <Header />
     <section className="title-section">
-      <h1>National Parks <br/> Discover-E-Pass</h1>
-      <h3>A Paperless Passport to America's National Parks and Monuments</h3>
+      <div className="title-image">
+        <h1>National Parks <br/> Discover-E-Pass</h1>
+        <h3>A Paperless Passport to America's National Parks and Monuments</h3>
+      </div>
+      
     </section>
     </header>
-    <body>
         <main>
           
           <Switch>
@@ -50,7 +52,6 @@ function App() {
             <Route component={NoPageFound} />
           </Switch>
       </main>
-    </body>
     <footer className="app-footer">
       <p>Created by Chris Aragon 2020</p>
     </footer>
