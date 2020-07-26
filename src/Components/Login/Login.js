@@ -74,16 +74,18 @@ export default class Login extends Component {
     render(){
         return (
             <>
-            <body>
+            <main>
                 <h1 className="login-title">Login</h1>
+                <p><Link to={'/signup'}>Click here</Link> to make an account</p>
                 <form className="login-form" onSubmit={this.handleSubmitJwtAuth}>
-                    <label for="username">Username</label><br/>
+                    <label htmlFor="username">Username</label><br/>
                     <input type="text" id="username-input" name="username" value={this.state.username} onChange={this.handleUsername} required/><br/>
-                    <label for="password">Password</label><br/>
+                    <label htmlFor="password">Password</label><br/>
                     <input type="password" id="password-input" name="password" value={this.state.password} onChange={this.handlePassword} required/><br/>
                     <button>Submit!</button>
                 </form>
-            </body>
+                <p id="trial-notice">Want to try out the program? Feel free to use the demo account!<br/>Username: Demo<br/>Password: Demo123!</p>
+            </main>
             </>
         )
     }

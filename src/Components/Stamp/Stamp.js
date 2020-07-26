@@ -66,12 +66,15 @@ export default class Stamp extends Component {
                 {this.handleNullImage()}
                 <div>
                     <p>Date Visited: {Date(this.state.stamp.stamp_date)}</p>
-                    <p>States: {this.state.stamp.states}</p>
+                    <p>State: {this.state.stamp.states}</p>
                     <p>Park Code: {this.state.stamp.parkcode}</p>
                     <p>To learn more information, check out {this.state.stamp.fullname}'s page on the National Park Service's website <a target='_blank' samesite='None' href={`https://www.nps.gov/${this.state.stamp.parkcode}/index.htm`}>here</a>!</p>
                 </div>
                 <button id='delete-button' onClick={this.handleStampDelete}>Delete Stamp from Passport</button><br/>
-                <Link to='/Stampbook'>Return to Stamp List</Link>
+                <div>
+                    <Link to='/Stampbook'>Return to Stamp List</Link>
+                </div>
+                
             </main>
                 
             )

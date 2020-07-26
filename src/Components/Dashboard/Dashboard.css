@@ -12,3 +12,9 @@ main{
 .Dashboard > h2{
     text-align: center;
 }
+
+@media screen and (min-width: 500px){
+    a {
+        font-size: 25px;
+    }
+}

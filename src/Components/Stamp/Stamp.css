@@ -27,4 +27,30 @@
     float: right;
     height: 30px;
     width: 100px;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 500px){
+    #stamp-body > h1{
+        font-size: 50px;
+    }
+    #stamp-body > div{
+        width: 90%;
+        font-size: 25px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    #stamp-body > img{
+        max-width: 600px;
+        max-height: 600px;
+        min-width: 400px;
+        min-height: 400px;
+    }
+    #stamp-body > button {
+        height: 50px;
+        width: 130px;
+        margin-right: 30px;
+        font-size: 15px;
+        font-weight: bold;
+    }
 }

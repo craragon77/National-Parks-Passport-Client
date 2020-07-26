@@ -24,3 +24,17 @@
 .login-form > label{
     font-weight: bold;
 }
+#trial-notice{
+    font-size: 10px;
+}
+
+@media screen and (min-width: 500px){
+    .login-form > label{
+        font-size: 20px;
+    }
+    .login-form > button{
+        height: 30px;
+        width: 60px;
+        font-weight: bold;
+    }
+}

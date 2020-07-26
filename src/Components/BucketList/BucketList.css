@@ -23,5 +23,19 @@
     margin-right: 5px;
     margin-bottom: 5px;
     color: white;
-    height: 20px;
+    height: 30px;
+    width: 100px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media screen and (min-width: 500px){
+    #bucket{
+        flex-direction: row;
+    }
+    #bucket > button{
+        margin-right: 0px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
 }

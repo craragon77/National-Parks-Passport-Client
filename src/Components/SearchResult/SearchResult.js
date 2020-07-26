@@ -9,8 +9,11 @@ export default class SearchResult extends Component {
             <>
             <div id="park" key={this.props.id}>
                 <p>{this.props.fullname}</p>
-                <StampButton fullname={this.props.fullname} id={this.props.id}/>
-                <BucketlistButton fullname={this.props.fullname} id={this.props.id}/>
+                <div id="button-box">
+                    <StampButton fullname={this.props.fullname} id={this.props.id}/>
+                    <BucketlistButton fullname={this.props.fullname} id={this.props.id}/>
+                </div>
+                
             </div>
                 
             </>

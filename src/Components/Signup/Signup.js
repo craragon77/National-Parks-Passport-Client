@@ -80,6 +80,7 @@ export default class Signup extends Component {
             <>
                 <body>
                     <h1 className="signup_title">Signup!</h1>
+                    <p>Already have an account? <br/><Link to='/Login'>Click here</Link> to log in</p>
                     <form className="signup-form" onSubmit={this.handleNewRegistration}>
                         <label for="username">Username</label><br/>
                         <input type="text" id="username-input" name="username" value={this.state.username} onChange={this.handleUsername}/><br/>

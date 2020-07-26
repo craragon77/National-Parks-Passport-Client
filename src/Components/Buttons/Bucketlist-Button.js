@@ -18,7 +18,7 @@ export default class BucketlistButton extends Component {
     }
     render(){
         return(
-            <button id="bucketlist-button" onClick = {this.addBucketlist}>Add to Bucketlist!</button>
+            <button id="bucketlist-button" onClick = {this.addBucketlist}>Add to Bucketlist</button>
         )
     }
 }

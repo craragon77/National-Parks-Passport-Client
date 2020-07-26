@@ -31,7 +31,7 @@ function App() {
       <Hamburger />
       <Header />
     <section className="title-section">
-      <div className="title-image">
+      <div className="title-header">
         <h1>National Parks <br/> Discover-E-Pass</h1>
         <h3>A Paperless Passport to America's National Parks and Monuments</h3>
       </div>

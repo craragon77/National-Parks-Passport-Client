@@ -56,7 +56,7 @@ export default class Header extends Component{
                     <ul>
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/Dashboard'>Dashboard</Link></li>
-                        <li><Link to='/Stampbook'>Your Stamps Book</Link></li>
+                        <li><Link to='/Stampbook'>Your Stamp Book</Link></li>
                         <li><Link to='/BucketList'>Your Bucket List</Link></li>
                         <li><Link to='/FindAPark'>Find Parks</Link></li>
                         {this.state.hasAuthToken 
