@@ -23,3 +23,22 @@
 .signup-form > label{
     font-weight: bold;
 }
+
+@media screen and (min-width: 800px){
+    .signup_title{
+        font-size: 35px;;
+    }
+    #login-link{
+        font-size: 25px;
+    }
+    .signup-form{
+        font-size: 25px;
+    }
+    .signup-form > button{
+        height: 40px;
+        width: 100px;
+        font-weight: bold;
+        font-size: 17px;
+    }
+
+}

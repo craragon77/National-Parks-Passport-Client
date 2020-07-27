@@ -6,7 +6,6 @@ const StampBookFetchService = {
         fetch(`${config.API_ENDPOINT}/stampbook`, {
             headers: {
                 'authorization': `basic ${TokenService.getAuthToken()}`,
-                //headers bb
             }
         })
         .then(res => {
@@ -14,18 +13,14 @@ const StampBookFetchService = {
                 return res.json()
             }
         })
-        .then(resJson => {
-            console.log(resJson)
-        })
         .catch(() => {
-            console.log('ahhh the getAllStamps service is being all broken or whatever')
+            console.error('ahhh the getAllStamps service is being all broken or whatever')
         })
     },
     getStampById(id){
         return fetch(`${config.API_ENDPOINT}/api/stampbook/id/${id}`, {
             headers: {
                 'authorization': `${TokenService.getAuthToken()}`,
-                //headers bb
             }
         })
     },

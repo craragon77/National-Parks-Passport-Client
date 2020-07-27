@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import Stamp from '../Stamp/Stamp';
 import './StampList.css';
 import StampFetchService from '../../Services/StampbookFetchService';
-import ParkFetchService from '../../Services/ParkFetchService';
 
 export default class StampList extends Component {
     constructor(props){
@@ -22,12 +20,11 @@ export default class StampList extends Component {
                 }
             })
             .then(resJson => {
-                console.log(resJson)
                 this.setState({
                     stamps: resJson
                 })
             })
-            .catch(error => {console.log(error)})
+            .catch(error => {console.error(error)})
         
     }
 
@@ -41,7 +38,6 @@ export default class StampList extends Component {
     }
 
     render() {
-        console.log(this.state.stamps)
         const stampArray = this.state.stamps.map(i => {
             return(
             <li id='stamps' key={i.stamp_id}>
@@ -56,7 +52,7 @@ export default class StampList extends Component {
                 <main>
                     <h1 className='Your-Stamps-Title'>Your Stamps!</h1>
                     <div>
-                        <Link to='/addStamp'>Add a New Stamp</Link><br/>
+                        <Link to='/FindAPark'>Add a New Stamp</Link><br/>
                         <ul>
                             {stampArray}
                             {this.handleNoStamps()}

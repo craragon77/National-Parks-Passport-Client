@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './BucketList.css';
 import BucketlistServices from '../../Services/BucketlistFetchService';
-import Bucketlist_Item from '../BucketList_Item/Bucketlist_Item';
 
 export default class Bucketlist extends Component {
     constructor(props){
@@ -28,10 +27,9 @@ export default class Bucketlist extends Component {
             this.setState({
                 bucketlist: resJson
             })
-            console.log(this.state.bucketlist)
         })
         .catch(err => {
-            console.log(err)
+            console.error(err)
         })
     }
 
@@ -47,7 +45,7 @@ export default class Bucketlist extends Component {
             this.loadBucketlistIntoState(user_id)
         })
         .catch(error => {
-            console.log(error)
+            console.error(error)
         })
     }
 
@@ -67,7 +65,7 @@ export default class Bucketlist extends Component {
                     <h1 className="Bucketlist-Title">Your Bucket List</h1>
                     <main>
                         {bucketlistArray}
-                        <Link to={'/Dashboard'}>Back to dashboard</Link>
+                        <Link to={'/Dashboard'}>Back to Dashboard</Link>
                     </main>
                 </div>
             </>

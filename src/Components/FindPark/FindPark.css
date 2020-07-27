@@ -48,3 +48,10 @@ input{
         font-size: 25px;
     }
 }
+@media screen and (min-width: 800px){
+    #search-parks{
+        font-size: 17px;
+        height: 35px;
+        width: 75px;
+    }
+}

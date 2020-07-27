@@ -12,7 +12,6 @@ const TokenService = {
         window.localStorage.removeItem(config.ID_TOKEN)
     },
     hasAuthToken(){
-        console.log('!!TokenService.getAuthToken()')
         return !!TokenService.getAuthToken()
     },
     makeBasicAuthToken(username, password){

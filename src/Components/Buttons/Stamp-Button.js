@@ -5,8 +5,6 @@ import './Stamp-Button.css'
 
 export default class StampButton extends Component {
     addStamp = (e) => {
-        //when the userId is included into the fetch request, the computer yells at me :(
-        //where is this second header that the computer is freaking out about?
         StampbookFetchService.postNewStamp(this.props.fullname, this.props.id)
         .then(res => {
             if (res.ok){
@@ -16,7 +14,7 @@ export default class StampButton extends Component {
         })
         .catch(error =>{
             alert('Unfortunatly something went wrong! You stamp was unable to be added to your passport')
-            console.log(error)
+            console.error(error)
         })
     }
     render(){

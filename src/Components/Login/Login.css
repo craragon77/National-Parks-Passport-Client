@@ -38,3 +38,24 @@
         font-weight: bold;
     }
 }
+
+@media screen and (min-width: 800px){
+    .login-title{
+        font-size: 35px;;
+    }
+    #signin-link{
+        font-size: 25px;
+    }
+    .login-form{
+        font-size: 25px;
+    }
+    .login-form > button{
+        height: 40px;
+        width: 100px;
+        font-weight: bold;
+        font-size: 17px;
+    }
+    #trial-notice{
+        font-size: 15px;
+    }
+}

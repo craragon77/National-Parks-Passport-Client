@@ -27,6 +27,7 @@
     width: 100px;
     margin-right: auto;
     margin-left: auto;
+    font-weight: bold;
 }
 
 @media screen and (min-width: 500px){
@@ -37,5 +38,8 @@
         margin-right: 0px;
         margin-top: auto;
         margin-bottom: auto;
+    }
+    #bucket > p{
+        text-align: left;
     }
 }

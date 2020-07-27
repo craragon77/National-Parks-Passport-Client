@@ -39,6 +39,10 @@ footer{
     padding: 50px;
 }
 
+a:hover, button:hover{
+    cursor: pointer;
+} 
+
 @media screen and (min-width: 500px){
     .app-header{
         background-size: 750px 300px;

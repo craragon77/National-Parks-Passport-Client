@@ -9,14 +9,24 @@ section{
     margin-left: 0px;
     margin-right: 0px;
 }
-h2{
-    text-align: left;
+.info-section > h2, .how-to-section > h2{
+    text-align: center;
 }
 
 section > p{
-    line-height: 24px;
+    line-height: 30px;
 }
 
 section > h2{
     text-align: center;
+}
+
+@media screen and (min-width: 800px){
+    .info-section > h2, .how-to-section > h2{
+        font-size: 30px;
+    }
+    div > p, div > p{
+        font-size: 20px;
+        line-height: 35px;
+    }
 }

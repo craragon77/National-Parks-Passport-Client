@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './Signup.css'
 import UserFetchService from '../../Services/UserFetchService';
-import TokenService from '../../Services/TokenService';
-import AuthApiService from '../../Services/auth-api-service';
 import './Signup.css'
 
 
@@ -49,10 +47,7 @@ export default class Signup extends Component {
             return alert('your two passwords do not match. Please ensure that they are identical')
         } else {
             UserFetchService.postNewUser(username, password)
-            //the error is not showing up
             .then(res => {
-                //there is an error here (even though its posting)
-                console.log(res)
                 return (!res.ok)
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
@@ -69,8 +64,7 @@ export default class Signup extends Component {
                 this.props.history.push('/login')
             })
             .catch((error) => {
-                //think about the UX for this!
-                console.log(alert(Object.values(error)))
+                console.error(alert(Object.values(error)))
             })
         }
     }
@@ -80,7 +74,7 @@ export default class Signup extends Component {
             <>
                 <body>
                     <h1 className="signup_title">Signup!</h1>
-                    <p>Already have an account? <br/><Link to='/Login'>Click here</Link> to log in</p>
+                    <p id="login-link">Already have an account? <br/><Link to='/Login'>Click here</Link> to log in</p>
                     <form className="signup-form" onSubmit={this.handleNewRegistration}>
                         <label for="username">Username</label><br/>
                         <input type="text" id="username-input" name="username" value={this.state.username} onChange={this.handleUsername}/><br/>

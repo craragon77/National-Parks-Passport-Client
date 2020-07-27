@@ -13,7 +13,7 @@ export default class BucketlistButton extends Component {
         })
         .catch((error) => {
             alert(`Unfortunatly something went wrong! This park was unable to be added to your bucketlist`)
-            console.log(error)
+            console.error(error)
         })
     }
     render(){

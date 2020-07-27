@@ -19,11 +19,11 @@ li{
 }
 
 a{
-    color: gold
+    color: gold;
 }
 
 a:hover{
-    color: rgb(2, 2, 199)
+    color: lightblue;
 }
 
 .header-bar--active {

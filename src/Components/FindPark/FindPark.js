@@ -29,16 +29,12 @@ export default class FindPark extends Component{
             }
         })
         .then(resJson => {
-            //ok so we know this works and it shows succesfully
-            //console.log(parks)
             this.setState({
                 parks: resJson,
                 searched: true
             })
-            //if you console.log the state, it shows you all the parks or whatever
-            console.log(this.state.parks)
         })
-        .catch(error => console.log(error))
+        .catch(error => console.error(error))
     }
 
     handleNoResultsFound = () => {
@@ -50,13 +46,10 @@ export default class FindPark extends Component{
 
     render(){
         const mappingParks = this.state.parks.map(i => {
-            //console.log(i.fullname + " " +  i.id)
             return <SearchResult fullname = {i.fullname} id = {i.id}/>
         })
-        //but this only shows the top of the ternary. If/else doesn't work
         const parkResults = this.state.searched
             ? <p id="find-a-park-results">{this.state.parks.length} park(s) were found matching your search</p>
-            //why doesn't this show up how I expect it to?
             : null
                 
         return(

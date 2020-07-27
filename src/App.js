@@ -2,8 +2,6 @@ import React from 'react';
 import LandingPage from './Components/LandingPage/LandingPage';
 import Signup from './Components/Signup/Signup';
 import Dashboard from './Components/Dashboard/Dashboard';
-import AddStamp from './Components/AddStamp/AddStamp';
-import AddBucketList from './Components/AddBucketList/AddBucketList';
 import {Route, Switch, Link} from 'react-router-dom';
 import StampList from './Components/StampList/StampList';
 import BucketList from './Components/BucketList/BucketList';
@@ -12,7 +10,6 @@ import Login from './Components/Login/Login';
 import STAMP from './Dummy-Data/Dummy-Stamp';
 import BUCKET from './Dummy-Data/Dummy-Bucketlist';
 import FindPark from '../src/Components/FindPark/FindPark';
-import TokenService from '../src/Services/TokenService';
 import Header from './Components/Header/Header'
 import PublicRoute from './Components/Routes/PublicRoute';
 import PrivateRoute from './Components/Routes/PrivateRoute';
@@ -21,8 +18,6 @@ import NoPageFound from './Components/NoPageFound/NoPageFound';
 import Hamburger from './Components/Buttons/Hamburger';
 
 function App() {
-  console.log(STAMP)
-  console.log(BUCKET)
   const Stamp_Dummy = STAMP.STAMP
   const Bucket = BUCKET.BUCKET
   return (

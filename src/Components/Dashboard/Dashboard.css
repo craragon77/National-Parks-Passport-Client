@@ -18,3 +18,12 @@ main{
         font-size: 25px;
     }
 }
+ @media screen and (min-width: 800px){
+    #stampbook-side, #bucketlist-side{
+        width: 50%;
+        padding: 20px;
+    }
+    .Dashboard{
+        display: flex;
+    }
+ }

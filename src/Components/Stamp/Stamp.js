@@ -14,7 +14,6 @@ export default class Stamp extends Component {
     }
 
     componentDidMount(){
-        //how can I get the stamp's id to use as a param?
         let stampId = window.location.pathname.split("/")[2]
         StampFetchService.fetchStampInfo(stampId)
             .then(res => {
@@ -23,13 +22,11 @@ export default class Stamp extends Component {
                 }
             })
             .then(resJson => {
-                console.log(resJson)
                 this.setState({
                     stamp: resJson[0]
                 })
-                console.log(this.state.stamp)
             })
-            .catch(error => {console.log(error)})      
+            .catch(error => {console.error(error)})      
     }
 
     handleStampDelete = (e) => {
@@ -44,7 +41,7 @@ export default class Stamp extends Component {
                 this.props.history.push('/Stampbook')
             })
             .catch(error => {
-                console.log(error)
+                console.error(error)
             })
     }
 
