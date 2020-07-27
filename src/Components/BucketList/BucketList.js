@@ -38,7 +38,7 @@ export default class Bucketlist extends Component {
         BucketlistServices.deleteBucketlistItem(bucketlist_id)
         .then(res => {
             if(res.ok){
-                alert(`you have successfully deleted ${this.state.bucketlist.fullname} from your bucket list!`)
+                alert(`The park has been deleted successfully!`)
             }
         })
         .then(() => {
