@@ -2,7 +2,7 @@ The National Parks Discover-E-Pass is a paperless passport to America's 490+ Nat
 
 This program is inspiried by the Passport to your National Parks books made and distributed by Eastern National, and the many National Parks of the United States National Parks Service.
 
-Special thanks to my advisor Jaina Morga for her help and support, as well as Matt Condit, Andrew Savage, and all those who work hard to preserve the environmental, historic, and cultural wonders of our country for future generations. 
+Special thanks to my advisor Jaina Morgan for her help and support, as well as Matt Condit, Andrew Savage, and all those who work hard to preserve the environmental, historic, and cultural wonders of our country for future generations. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
