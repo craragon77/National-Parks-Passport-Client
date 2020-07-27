@@ -6,7 +6,6 @@ const UserFetchService = {
         fetch(`${config.API_ENDPOINT}/api/users`, {
             headers: {
                 'authorization': `${TokenService.getAuthToken()}`,
-                //headers will go in here
             }
         })
         .then(res => {
@@ -14,20 +13,14 @@ const UserFetchService = {
                 return res.json()
             }
         })
-        .then(resJson => {
-            console.log(resJson)
-        })
         .catch(() => {
-            console.log(`aaaaaaaahhhhhh somethings wrong with the getAllUsers endpoint`)
+            console.error(`aaaaaaaahhhhhh somethings wrong with the getAllUsers endpoint`)
         })
     },
-    //where will the program get the userId? from context? or what?
     getUserById(id){
-        //where is this ID gonna come from?
         return fetch(`${config.API_ENDPOINT}/api/users/id/${id}`, {
             headers: {
-                'Authorization': `${TokenService.getAuthToken()}`,
-                //headers will go in here
+                'Authorization': `${TokenService.getAuthToken()}`
             }
         })
     },
@@ -35,7 +28,6 @@ const UserFetchService = {
         fetch(`${config.API_ENDPOINT}/api/users/${fullname}`, {
             headers: {
                 'authorization': `basic ${TokenService.getAuthToken()}`
-                //headers will go in here
             }
         })
         .then(res => {
@@ -43,11 +35,8 @@ const UserFetchService = {
                 return res.json()
             }
         })
-        .then(resJson => {
-            console.log(resJson)
-        })
         .catch(() => {
-            console.log(`aaaaaaaahhhhhh somethings wrong with the getUserById endpoint`)
+            console.error(`aaaaaaaahhhhhh somethings wrong with the getUserById endpoint`)
         })
     },
     postNewUser(username, password){

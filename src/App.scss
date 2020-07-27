@@ -24,11 +24,39 @@ footer{
     display: inline;
     flex-direction: column-reverse;
 }
-
-.title-image{
-    background-image: url('./pics/golden-gate-bridge.jpg');
-    background-size: 350px 200px;
+.app-header{
+    background-image: url('./pics/mount-rushmore-dark.jpg');
+    background-size: 450px 300px;
     background-repeat: none;
     background-position: center;
+    padding-bottom: 30px;
+}
+
+footer{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 50px;
+    padding: 50px;
+}
+
+a:hover, button:hover{
+    cursor: pointer;
+} 
+
+@media screen and (min-width: 500px){
+    .app-header{
+        background-size: 750px 300px;
+    }
+    .title-header > h1{
+        font-size: 35px;
+    }
+    
+}
+
+@media screen and (min-width: 800px){
+    .app-header{
+        background-image: url('./pics/grand-canyon-tinted.jpg');
+        background-size: 1600px;
+    }
 }
 

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import BucketlistFetchService from '../../Services/BucketlistFetchService'
+import BucketlistFetchService from '../../Services/BucketlistFetchService';
+import './Bucketlist-Button.css'
 
 export default class BucketlistButton extends Component {
     addBucketlist = (e) => {
@@ -12,12 +13,12 @@ export default class BucketlistButton extends Component {
         })
         .catch((error) => {
             alert(`Unfortunatly something went wrong! This park was unable to be added to your bucketlist`)
-            console.log(error)
+            console.error(error)
         })
     }
     render(){
         return(
-            <button onClick = {this.addBucketlist}>Add to Bucketlist!</button>
+            <button id="bucketlist-button" onClick = {this.addBucketlist}>Add to Bucketlist</button>
         )
     }
 }

@@ -29,46 +29,40 @@ export default class FindPark extends Component{
             }
         })
         .then(resJson => {
-            //ok so we know this works and it shows succesfully
-            //console.log(parks)
             this.setState({
                 parks: resJson,
                 searched: true
             })
-            //if you console.log the state, it shows you all the parks or whatever
-            console.log(this.state.parks)
         })
-        .catch(error => console.log(error))
+        .catch(error => console.error(error))
     }
 
     handleNoResultsFound = () => {
         if (this.state.searched == true && this.state.parks.length === 0){
-            return (<p>Unfortunatly no results were found based on your input.
+            return (<p id="nothing-found">Unfortunatly no results were found based on your input.
                  Try tweaking your search request and try again</p>)
         }
     }
 
     render(){
-        const mappingTest = this.state.parks.map(i => {
-            //console.log(i.fullname + " " +  i.id)
+        const mappingParks = this.state.parks.map(i => {
             return <SearchResult fullname = {i.fullname} id = {i.id}/>
         })
-        //but this only shows the top of the ternary. If/else doesn't work
         const parkResults = this.state.searched
-    ? <p>Here are your results based on your search!<br/>You have {this.state.parks.length} parks that match your search</p>
-            //why doesn't this show up how I expect it to?
+            ? <p id="find-a-park-results">{this.state.parks.length} park(s) were found matching your search</p>
             : null
                 
         return(
             <>
                 <form onSubmit={this.usingTheFetchService}>
-                    <label id="label" htmlfor="park_search">Enter the name of any park, monument, or historic site in the United States</label>
+                    <label id="label" htmlFor="park_search">Enter the name of any park, monument, or historic site in the United States</label><br/>
                     <input type="text" name="fullname" value={this.state.fullname} onChange={this.dealWithFullName} required /><br/>
                     <button id="search-parks">Submit!</button>
                 </form>
                 <hr/>
-                {parkResults}
-                {mappingTest}
+                    {parkResults}
+                    {mappingParks}
+                
                 {this.handleNoResultsFound()}
             </>
         )

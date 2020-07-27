@@ -1,8 +1,14 @@
+The National Parks Discover-E-Pass is a paperless passport to America's 490+ National Parks and Monuments. Record every one you visit with the click of a button.
+
+This program is inspiried by the Passport to your National Parks books made and distributed by Eastern National, and the many National Parks of the United States National Parks Service.
+
+Special thanks to my advisor Jaina Morga for her help and support, as well as Matt Condit, Andrew Savage, and all those who work hard to preserve the environmental, historic, and cultural wonders of our country for future generations. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run: React, Node, Javascript, CSS, SCSS, and Postgresql
 
 ### `npm start`
 

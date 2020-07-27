@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './BucketList.css';
 import BucketlistServices from '../../Services/BucketlistFetchService';
-import Bucketlist_Item from '../BucketList_Item/Bucketlist_Item';
 
 export default class Bucketlist extends Component {
     constructor(props){
@@ -28,10 +27,9 @@ export default class Bucketlist extends Component {
             this.setState({
                 bucketlist: resJson
             })
-            console.log(this.state.bucketlist)
         })
         .catch(err => {
-            console.log(err)
+            console.error(err)
         })
     }
 
@@ -47,7 +45,7 @@ export default class Bucketlist extends Component {
             this.loadBucketlistIntoState(user_id)
         })
         .catch(error => {
-            console.log(error)
+            console.error(error)
         })
     }
 
@@ -55,21 +53,21 @@ export default class Bucketlist extends Component {
     render(){
         const bucketlistArray = this.state.bucketlist.map(i => {
             return(
-                <li key={i.bucketlist_id}>
+                <li id="bucket" key={i.bucketlist_id}>
                     <p>{i.fullname}</p>
-                    <button onClick={() =>this.handleDelete(i.bucketlist_id)}>Remove from bucketlist</button>
+                    <button onClick={() =>this.handleDelete(i.bucketlist_id)}>Remove from Bucket List</button>
                 </li>
             )
         })
         return(
             <>
-                <body>
+                <div className = "BucketList">
                     <h1 className="Bucketlist-Title">Your Bucket List</h1>
                     <main>
                         {bucketlistArray}
-                        <Link to={'/Dashboard'}>Back to dashboard</Link>
+                        <Link to={'/Dashboard'}>Back to Dashboard</Link>
                     </main>
-                </body>
+                </div>
             </>
         )
     }

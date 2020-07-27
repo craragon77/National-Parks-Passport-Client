@@ -12,3 +12,18 @@ main{
 .Dashboard > h2{
     text-align: center;
 }
+
+@media screen and (min-width: 500px){
+    a {
+        font-size: 25px;
+    }
+}
+ @media screen and (min-width: 800px){
+    #stampbook-side, #bucketlist-side{
+        width: 50%;
+        padding: 20px;
+    }
+    .Dashboard{
+        display: flex;
+    }
+ }

@@ -1,3 +1,45 @@
 .Bucketlist-Title{
     text-align: center;
 }
+
+#bucket{
+    margin: 10px;
+    line-height: normal;
+    border-radius: 5px;
+    border: 2px solid gray;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#bucket > p{
+    margin: 5px;
+}
+
+#bucket > button{
+    background-color: rgb(153, 8, 8);
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    color: white;
+    height: 30px;
+    width: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 500px){
+    #bucket{
+        flex-direction: row;
+    }
+    #bucket > button{
+        margin-right: 0px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    #bucket > p{
+        text-align: left;
+    }
+}

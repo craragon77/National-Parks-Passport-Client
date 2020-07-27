@@ -10,7 +10,7 @@ form{
 }
 input{
     margin-top: 10px;
-    border-radius: 5%;
+    border-radius: 5px;
     border: 1px solid black;
     height: 20px;
 }
@@ -21,4 +21,37 @@ input{
     background-color: gold;
     border: 1px solid black;
     font-weight: bold;
+}
+#nothing-found{
+    color: rgb(255, 40, 40);
+    font-weight: bold;
+}
+
+@media screen and (min-width: 500px){
+    #label{
+        font-size: 25px;
+    }
+    input{
+        height: 30px;
+        width: 250px;
+        font-size: 20px;
+    }
+    #search-parks{
+        height: 30px;
+        width: 60px;
+        font-size: 15px;
+    }
+    #find-a-park-results{
+        font-size: 20px;
+    }
+    #nothing-found{
+        font-size: 25px;
+    }
+}
+@media screen and (min-width: 800px){
+    #search-parks{
+        font-size: 17px;
+        height: 35px;
+        width: 75px;
+    }
 }

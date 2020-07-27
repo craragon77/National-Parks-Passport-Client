@@ -1,0 +1,7 @@
+#bucketlist-button{
+    background-color: rgba(51, 51, 172, 0.76);
+    border-radius: 5px;
+    border: 1px solid black;
+    color: white;
+    height: 30px;
+}
