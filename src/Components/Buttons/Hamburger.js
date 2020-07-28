@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Hamburger.scss'
+import './Hamburger.scss';
 
 
 export default class Hamburger extends Component{
@@ -21,4 +21,4 @@ export default class Hamburger extends Component{
             </button>
         )
     }
-}
+};

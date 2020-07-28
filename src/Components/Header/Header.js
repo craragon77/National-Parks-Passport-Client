@@ -6,10 +6,10 @@ import '../Buttons/Hamburger.scss';
 
 export default class Header extends Component{
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
             hasAuthToken: TokenService.hasAuthToken()
-        }
+        };
     }
     
     componentDidMount(){
@@ -19,7 +19,7 @@ export default class Header extends Component{
     }
     
     handleLogOutClick = () => {
-        TokenService.clearAuthToken()
+        TokenService.clearAuthToken();
         this.setState({
             hasAuthToken: TokenService.hasAuthToken()
         })
@@ -57,4 +57,4 @@ export default class Header extends Component{
             </>
         )
     }
-}
+};

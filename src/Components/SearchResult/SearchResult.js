@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import StampButton from '../Buttons/Stamp-Button';
 import BucketlistButton from '../Buttons/Bucketlist-Button';
-import './SearchResult.css'
+import './SearchResult.css';
 
 export default class SearchResult extends Component {
     render(){
@@ -20,4 +20,4 @@ export default class SearchResult extends Component {
             
         )
     }
-}
+};

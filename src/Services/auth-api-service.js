@@ -1,4 +1,4 @@
-import config from '../config'
+import config from '../config';
 
 const AuthApiService = {
     postLogin(username, password){
@@ -11,9 +11,9 @@ const AuthApiService = {
                 'username': username,
                 'password': password
             })
-        })
+        });
         
     }
-}
+};
 
 export default AuthApiService

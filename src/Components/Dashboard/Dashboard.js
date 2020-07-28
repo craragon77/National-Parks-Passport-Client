@@ -1,68 +1,68 @@
-import React, {Component} from 'react'
-import StampList from '../StampList/StampList'
-import BucketList from'../BucketList/BucketList'
-import {Route, Link} from 'react-router-dom'
+import React, {Component} from 'react';
+import StampList from '../StampList/StampList';
+import BucketList from'../BucketList/BucketList';
+import {Route, Link} from 'react-router-dom';
 import UserFetchService from '../../Services/UserFetchService';
 import StampbookFetchService from '../../Services/StampbookFetchService';
 import BucketlistFetchService from '../../Services/BucketlistFetchService';
 import config from '../../config';
-import './Dashboard.css'
+import './Dashboard.css';
 
 
 export default class Dashboard extends Component{
     constructor(props){
-        super(props)
+        super(props);
         this.state =  {
             username: '',
             stamps: '',
             bucketlist: ''
-        }
+        };
     }
     componentDidMount(){
         let id = window.localStorage.token_id
         UserFetchService.getUserById(id)
             .then(res => {
                 if (res.ok){
-                    return res.json()
-                }
+                    return res.json();
+                };
             })
             .then(resJson => {
                 this.setState({
                     username: resJson.username
-                })
+                });
             })
-            .catch(() => {
-                console.error(`aaaaaaaahhhhhh somethings wrong with the getUserById endpoint`)
+            .catch(error => {
+                console.error(error);
             })
 
         StampbookFetchService.fetchUserStamp(id)
             .then(res => {
                 if (res.ok){
-                    return res.json()
-                }
+                    return res.json();
+                };
             })
             .then(resJson => {
                 this.setState({
                     stamps: resJson.length
-                })
+                });
             })
-            .catch(() => {
-                console.error(`aaaaaaaahhhhhh somethings wrong with the getUserById endpoint`)
+            .catch(error => {
+                console.error(error);
             })
 
         BucketlistFetchService.getBucketlistUser(id)
             .then(res => {
                 if (res.ok){
-                    return res.json()
-                }
+                    return res.json();
+                };
             })
             .then(resJson => {
                 this.setState({
                     bucketlist: resJson.length
-                })
+                });
             })
             .catch(err => {
-                console.error(err)
+                console.error(err);
             })
     }
     render(){
@@ -94,4 +94,4 @@ export default class Dashboard extends Component{
             </>
         )
     }
-}
+};

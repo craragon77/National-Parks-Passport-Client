@@ -26,8 +26,8 @@ footer{
 }
 .app-header{
     background-image: url('./pics/mount-rushmore-dark.jpg');
-    background-size: 450px 300px;
-    background-repeat: none;
+    background-size: 100%;
+    background-repeat: no-repeat;
     background-position: center;
     padding-bottom: 30px;
 }
@@ -56,7 +56,8 @@ a:hover, button:hover{
 @media screen and (min-width: 800px){
     .app-header{
         background-image: url('./pics/grand-canyon-tinted.jpg');
-        background-size: 1600px;
+        background-size: 100%;
+        background-repeat: no-repeat;
     }
 }
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import StampbookFetchService from '../../Services/StampbookFetchService';
-import './Stamp-Button.css'
+import './Stamp-Button.css';
 
 
 export default class StampButton extends Component {
@@ -8,13 +8,13 @@ export default class StampButton extends Component {
         StampbookFetchService.postNewStamp(this.props.fullname, this.props.id)
         .then(res => {
             if (res.ok){
-                alert(`you have stamped ${this.props.fullname}, and it has successfully been added to your passport`)
-                return res.json
+                alert(`you have stamped ${this.props.fullname}, and it has successfully been added to your passport`);
+                return res.json;
             }
         })
         .catch(error =>{
-            alert('Unfortunatly something went wrong! You stamp was unable to be added to your passport')
-            console.error(error)
+            alert('Unfortunatly something went wrong! You stamp was unable to be added to your passport');
+            console.error(error);
         })
     }
     render(){
@@ -22,4 +22,4 @@ export default class StampButton extends Component {
             <button id="stamp-button" onClick={this.addStamp}>Add to Stampbook</button>
         )
     }
-}
+};

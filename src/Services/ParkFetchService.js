@@ -11,18 +11,18 @@ const ParkFetchService = {
             })
             .then(res => {
                 if (res.ok){
-                    return res.json()
+                    return res.json();
                 }
             })
             .catch(error => console.error('there was an error in the fetchAllParks endpoint!'))
-        )
+        );
     },
     getParkByFullName(params){
         return fetch(`${config.API_ENDPOINT}/api/parks/name/${params}`, {
                 headers: {
                     'authorization': `${TokenService.getAuthToken()}`
                 }
-            })
+            });
     },
     getParkById(id){
         return(
@@ -31,8 +31,8 @@ const ParkFetchService = {
                     'authorization': `${TokenService.getAuthToken()}`
                 }
             })
-        )
+        );
     }
-}
+};
 
 export default ParkFetchService;

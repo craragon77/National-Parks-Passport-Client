@@ -1,41 +1,41 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import './Signup.css'
+import './Signup.css';
 import UserFetchService from '../../Services/UserFetchService';
-import './Signup.css'
+import './Signup.css';
 
 
 export default class Signup extends Component {
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
             username: '',
             password: '',
             password2: '',
             error: null
-        }
+        };
     }
 
     handleUsername = (event) => {
         this.setState({
             username: event.target.value
-        })
+        });
     }
     handlePassword = (event) => {
         this.setState({
             password: event.target.value
-        })
+        });
     }
     handleRepeatPassword = (event) => {
         this.setState({
             password2: event.target.value
-        })
+        });
     }
 
     handleNickname = (event) => {
         this.setState({
             nickname: event.target.value
-        })
+        });
     }
 
     handleNewRegistration = (e) => {
@@ -44,7 +44,7 @@ export default class Signup extends Component {
         let password = this.state.password
 
         if (this.state.password !== this.state.password2){
-            return alert('your two passwords do not match. Please ensure that they are identical')
+            return alert('your two passwords do not match. Please ensure that they are identical');
         } else {
             UserFetchService.postNewUser(username, password)
             .then(res => {
@@ -60,11 +60,11 @@ export default class Signup extends Component {
                 })
             })
             .then(() => {
-                alert(`Horray! You have successfully made an account! You will now be redirected to the login page to access your account!`)
-                this.props.history.push('/login')
+                alert(`Horray! You have successfully made an account! You will now be redirected to the login page to access your account!`);
+                this.props.history.push('/login');
             })
             .catch((error) => {
-                console.error(alert(Object.values(error)))
+                console.error(alert(Object.values(error)));
             })
         }
     }
@@ -90,4 +90,4 @@ export default class Signup extends Component {
             </>
         )
     }
-}
+};

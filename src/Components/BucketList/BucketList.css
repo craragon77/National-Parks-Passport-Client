@@ -23,7 +23,7 @@
     margin-right: 5px;
     margin-bottom: 5px;
     color: white;
-    height: 30px;
+    height: 50px;
     width: 100px;
     margin-right: auto;
     margin-left: auto;
@@ -38,6 +38,7 @@
         margin-right: 0px;
         margin-top: auto;
         margin-bottom: auto;
+        font-weight: bold;
     }
     #bucket > p{
         text-align: left;

@@ -8,43 +8,43 @@ import './Stamp.css';
 
 export default class Stamp extends Component {
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
             stamp: []
-        }
-    }
+        };
+    };
 
     componentDidMount(){
-        let stampId = window.location.pathname.split("/")[2]
+        let stampId = window.location.pathname.split("/")[2];
         StampFetchService.fetchStampInfo(stampId)
             .then(res => {
                 if(res.ok){
-                    return res.json()
-                }
+                    return res.json();
+                };
             })
             .then(resJson => {
                 this.setState({
                     stamp: resJson[0]
-                })
+                });
             })
-            .catch(error => {console.error(error)})      
-    }
+            .catch(error => {console.error(error)});
+    };
 
     handleStampDelete = (e) => {
-        let stampId = window.location.pathname.split("/")[2]
+        let stampId = window.location.pathname.split("/")[2];
         StampFetchService.deleteStamp(stampId)
             .then(res => {
                 if(res.ok){
-                    alert(`you have successfully deleted ${this.state.stamp.fullname} from your stampbook! You will be redirected back to the stampbook page!`)
-                }
+                    alert(`you have successfully deleted ${this.state.stamp.fullname} from your stampbook! You will be redirected back to the stampbook page!`);
+                };
             })
             .then(() => {
-                this.props.history.push('/Stampbook')
+                this.props.history.push('/Stampbook');
             })
             .catch(error => {
-                console.error(error)
+                console.error(error);
             })
-    }
+    };
 
     handleNullImage = () => {
         if (!this.state.stamp.image || this.state.stamp.image === 'null'){
@@ -52,11 +52,11 @@ export default class Stamp extends Component {
         } else {
             return <img id="stamp-photo" src={this.state.stamp.image} alt="National Parks Picture" />
         }
-    }
+    };
 
     handleNoStampFound = () => {
         if (this.state.stamp == null){
-            return <NoPageFound />
+            return <NoPageFound />;
         } else {
             return (
             <main id="stamp-body">
@@ -75,9 +75,9 @@ export default class Stamp extends Component {
                 
             </main>
                 
-            )
-        }
-    }
+            );
+        };
+    };
 
 
     render(){
@@ -87,4 +87,4 @@ export default class Stamp extends Component {
             </>
         )
     }
-}
+};

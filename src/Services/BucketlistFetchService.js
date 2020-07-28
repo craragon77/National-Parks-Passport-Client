@@ -7,11 +7,11 @@ const BucketlistFetchService = {
         })
         .then(res => {
             if (res.ok){
-                return res.json()
+                return res.json();
             }
         })
-        .catch(() => {
-            console.error('ahhh the getAllBucketlist service thingy is being all broken or whatever')
+        .catch((error) => {
+            console.error(error);
         })
     },
     getBucketlistById(id){
@@ -19,11 +19,11 @@ const BucketlistFetchService = {
         })
         .then(res => {
             if (res.ok){
-                return res.json()
+                return res.json();
             }
         })
-        .catch(() => {
-            console.error('ahhh the getAllBucketlist service thingy is being all broken or whatever')
+        .catch((error) => {
+            console.error(error);
         })
     },
     postNewBucketlist(user_id, park_id){
@@ -37,21 +37,21 @@ const BucketlistFetchService = {
                 "user_id": user_id,
                 "park_id": park_id
             })
-        })
+        });
     }, 
     getBucketlistUser(id){
         return fetch(`${config.API_ENDPOINT}/api/bucketlist/userId/${id}`, {
             headers: {
                 'authorization': `${TokenService.getAuthToken()}`
             }
-        })
+        });
     },
     getBucketlistAndParkName(id){
         return fetch(`${config.API_ENDPOINT}/api/bucketlist/info/${id}`, {
             headers: {
                 'authorization': `${TokenService.getAuthToken()}`
             }
-        })
+        });
     },
     deleteBucketlistItem(id){
         return fetch(`${config.API_ENDPOINT}/api/bucketlist/id/${id}`, {
@@ -60,8 +60,8 @@ const BucketlistFetchService = {
                 'authorization': `${TokenService.getAuthToken()}`,
                 'content-type': 'application/json'
             }
-        })
+        });
     }
-}
+};
 
 export default BucketlistFetchService

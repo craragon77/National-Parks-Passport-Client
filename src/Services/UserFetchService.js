@@ -10,11 +10,11 @@ const UserFetchService = {
         })
         .then(res => {
             if (res.ok){
-                return res.json()
+                return res.json();
             }
         })
         .catch(() => {
-            console.error(`aaaaaaaahhhhhh somethings wrong with the getAllUsers endpoint`)
+            console.error(`somethings wrong with the getAllUsers endpoint`);
         })
     },
     getUserById(id){
@@ -22,7 +22,7 @@ const UserFetchService = {
             headers: {
                 'Authorization': `${TokenService.getAuthToken()}`
             }
-        })
+        });
     },
     getUserByFullName(fullname){
         fetch(`${config.API_ENDPOINT}/api/users/${fullname}`, {
@@ -32,11 +32,11 @@ const UserFetchService = {
         })
         .then(res => {
             if (res.ok){
-                return res.json()
+                return res.json();
             }
         })
         .catch(() => {
-            console.error(`aaaaaaaahhhhhh somethings wrong with the getUserById endpoint`)
+            console.error(`somethings wrong with the getUserById endpoint`);
         })
     },
     postNewUser(username, password){
@@ -49,8 +49,8 @@ const UserFetchService = {
                 'username': username,
                 'password': password
             }),
-        })
+        });
     }
-}
+};
 
 export default UserFetchService;

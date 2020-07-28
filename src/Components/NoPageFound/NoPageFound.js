@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import './NoPageFound.css'
+import './NoPageFound.css';
 
 export default class NoPageFound extends Component{
     render(){
@@ -12,4 +12,4 @@ export default class NoPageFound extends Component{
             </>
         )
     }
-}
+};

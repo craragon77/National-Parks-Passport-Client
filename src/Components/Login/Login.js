@@ -11,24 +11,24 @@ export default class Login extends Component {
         this.state = {
             username: '',
             password: ''
-        }
+        };
     }
 
     handleUsername = (event) => {
         this.setState({
             username: event.target.value
-        })
+        });
     }
 
     handlePassword = (event) => {
         this.setState({
             password: event.target.value
-        })
+        });
     }
 
     handleSubmitJwtAuth = (e) => {
-        e.preventDefault()
-        this.setState({error: null})
+        e.preventDefault();
+        this.setState({error: null});
         let username = this.state.username
         let password = this.state.password
         AuthApiService.postLogin(username, password)
@@ -42,16 +42,16 @@ export default class Login extends Component {
                 this.setState({
                     username: '',
                     password: ''
-                })
+                });
                 
                 TokenService.saveAuthToken(data.authToken)
                 TokenService.saveUserId(data.storedId)
             })
             .then(() => {
-                window.location.href = '/dashboard'
+                window.location.href = '/dashboard';
             })
             .catch(res => {
-                console.dir(res)
+                console.dir(res);
             })
     }
 
@@ -73,4 +73,4 @@ export default class Login extends Component {
             </>
         )
     }
-}
+};

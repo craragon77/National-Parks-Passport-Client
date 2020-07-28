@@ -8,8 +8,8 @@ export default class Bucketlist extends Component {
         super(props);
         this.state = {
             bucketlist: []
-        }
-    }
+        };
+    };
 
     componentDidMount(){
         let id = window.localStorage.token_id
@@ -20,32 +20,32 @@ export default class Bucketlist extends Component {
         BucketlistServices.getBucketlistAndParkName(id)
         .then(res => {
             if (res.ok){
-                return res.json()
-            }
+                return res.json();
+            };
         })
         .then(resJson => {
             this.setState({
                 bucketlist: resJson
-            })
+            });
         })
         .catch(err => {
             console.error(err)
-        })
+        });
     }
 
     handleDelete = (bucketlist_id) => {
-        let user_id = window.localStorage.token_id
+        let user_id = window.localStorage.token_id;
         BucketlistServices.deleteBucketlistItem(bucketlist_id)
         .then(res => {
             if(res.ok){
-                alert(`The park has been deleted successfully!`)
+                alert(`The park was deleted successfully`);
             }
         })
         .then(() => {
-            this.loadBucketlistIntoState(user_id)
+            this.loadBucketlistIntoState(user_id);
         })
         .catch(error => {
-            console.error(error)
+            console.error(error);
         })
     }
 
@@ -71,4 +71,4 @@ export default class Bucketlist extends Component {
             </>
         )
     }
-}
+};

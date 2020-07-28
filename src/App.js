@@ -18,8 +18,6 @@ import NoPageFound from './Components/NoPageFound/NoPageFound';
 import Hamburger from './Components/Buttons/Hamburger';
 
 function App() {
-  const Stamp_Dummy = STAMP.STAMP
-  const Bucket = BUCKET.BUCKET
   return (
     <>
     <header className="app-header">
@@ -53,6 +51,6 @@ function App() {
 
     </>
   )
-}
+};
 
 export default App;

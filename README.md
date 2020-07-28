@@ -9,6 +9,8 @@ This program is inspiried by the Passport to your National Parks books made and 
 
 
 ![Dashboard Image](https://github.com/craragon77/National-Parks-Passport-Client/blob/master/src/pics/README-snapshot-4.jpg)
+![Park Search Image](https://github.com/craragon77/National-Parks-Passport-Client/blob/master/src/pics/README-snapshot-3.jpg)
+![Stamp Image](https://github.com/craragon77/National-Parks-Passport-Client/blob/master/src/pics/README-snapshot-2.jpg)
 
 The National Parks Discover-E-Pass client was built using Javascript, React, JSX, CSS, SCSS, and HTML5
 
