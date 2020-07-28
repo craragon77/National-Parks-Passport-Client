@@ -5,9 +5,9 @@ Live website: https://parks-client.vercel.app/
 This program is inspiried by the Passport to your National Parks books made and distributed by Eastern National, and the many National Parks of the United States National Parks Service. To use this program, create a username and password and login to make an account. This account can be used to 'stamp' the parks that you have attended and mark parks that you want to visit in the future. Stamps are collected in your own personal stamp book, while parks you want to attend are recorded in your own personal private bucket list. This program is free to use and perfect for history lovers, outdoors people, and national park enthusiests.
 
 
-<img src="./src/pics/README-4.jpg" alt="Dashboard page"></img>
-<img src="./src/pics/README-3.jpg" alt="Park search"></img>
-<img src="./src/pics/README-2.jpg" alt="Sample stamp"></img>
+<img src="../src/pics/README-4.jpg" alt="Dashboard page"></img>
+<img src="../src/pics/README-3.jpg" alt="Park search"></img>
+<img src="../src/pics/README-2.jpg" alt="Sample stamp"></img>
 
 
 The National Parks Discover-E-Pass client was built using Javascript, React, JSX, CSS, SCSS, and HTML5
