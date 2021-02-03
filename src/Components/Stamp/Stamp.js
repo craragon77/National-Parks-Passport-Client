@@ -58,12 +58,13 @@ export default class Stamp extends Component {
         if (this.state.stamp == null){
             return <NoPageFound />;
         } else {
+
             return (
             <main id="stamp-body">
                 <h1>{this.state.stamp.fullname}</h1>
                 {this.handleNullImage()}
                 <div>
-                    <p>Date Visited: {Date(this.state.stamp.stamp_date)}</p>
+                    {/*<p>Date Visited: {this.state.stamp.stamp_date}</p>*/}
                     <p>State: {this.state.stamp.states}</p>
                     <p>Park Code: {this.state.stamp.parkcode}</p>
                     <p>To learn more information, check out {this.state.stamp.fullname}'s page on the National Park Service's website <a target='_blank' samesite='None' href={`https://www.nps.gov/${this.state.stamp.parkcode}/index.htm`}>here</a>!</p>

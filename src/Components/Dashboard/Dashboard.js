@@ -85,7 +85,7 @@ export default class Dashboard extends Component{
                     <div id="bucketlist-side">
                         <h2>You have {this.state.bucketlist} National Parks on your Bucket List</h2><br/>
                         <Link to={'/Bucketlist'}>
-                            View Your BucketList
+                            View Your Bucket List
                         </Link><br/>
                     </div>
                 </div>

@@ -26,14 +26,14 @@ export default class Header extends Component{
     }
     renderLogOutLink = () => {
         return(
-            <li><Link to='/' onClick={this.handleLogOutClick}>Signout</Link></li>
+            <li><Link to='/' onClick={this.handleLogOutClick}>Sign out</Link></li>
         )
     }
     renderLoginLink = () => {
         return(
             <>
                 <li id="login-nav"><Link to={'/Login'}>Login</Link></li><br/>
-                <li id="signup-nav"><Link to={'/Signup'}>Signup</Link></li>
+                <li id="signup-nav"><Link to={'/Sign up'}>Sign up</Link></li>
             </>
             
         )
@@ -46,7 +46,7 @@ export default class Header extends Component{
                     <ul>
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/Dashboard'>Dashboard</Link></li>
-                        <li><Link to='/Stampbook'>Your Stamp Book</Link></li>
+                        <li><Link to='/Stampbook'>Your Stampbook</Link></li>
                         <li><Link to='/BucketList'>Your Bucket List</Link></li>
                         <li><Link to='/FindAPark'>Find Parks</Link></li>
                         {this.state.hasAuthToken 
